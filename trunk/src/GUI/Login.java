@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         lblPermission = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         txtPassWord = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox();
+        cboPermission = new javax.swing.JComboBox();
         btnLogin = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
@@ -97,8 +97,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "User", "Staff" }));
+        cboPermission.setForeground(new java.awt.Color(0, 0, 255));
+        cboPermission.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "User", "Staff" }));
 
         btnLogin.setForeground(new java.awt.Color(255, 0, 0));
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/unlock.png"))); // NOI18N
@@ -112,6 +112,11 @@ public class Login extends javax.swing.JFrame {
         btnExit.setForeground(new java.awt.Color(255, 0, 0));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Exit.png"))); // NOI18N
         btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         btnReset.setForeground(new java.awt.Color(255, 0, 0));
         btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/reset.png"))); // NOI18N
@@ -147,7 +152,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtUserName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboPermission, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPassWord, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -179,7 +184,7 @@ public class Login extends javax.swing.JFrame {
                                     .addComponent(txtPassWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblPassWord))
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cboPermission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(69, 69, 69))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,7 +206,7 @@ public class Login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -219,10 +224,11 @@ private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         txtUserName.setText("");
        txtPassWord.setText("");
        txtUserName.requestFocus();
+       cboPermission.setSelectedIndex(1);
     }//GEN-LAST:event_btnResetActionPerformed
 public void callConnection(){
      try {
-            conn = DAO.DAOUtil.getConnection();
+            conn = DAO.Connect.getConnection();
             username = txtUserName.getText();
             password = new String(txtPassWord.getPassword());
              if (txtUserName.getText().equals("")) {
@@ -235,16 +241,16 @@ public void callConnection(){
                 txtPassWord.requestFocus();
                 return;
             }
-             if(jComboBox1.getSelectedItem().equals("Admin")){
+             if(cboPermission.getSelectedItem().equals("Admin")){
           logIsAdmin = true;
            try {
               //  @SuppressWarnings("static-access")
                 
-                conn = DAO.DAOUtil.getConnection();
+                conn = DAO.Connect.getConnection();
                 if(conn!=null){
                 //creating a string to store the command T-SQL:
                     
-                String strsql="select UserName,Password from tblUser "
+                String strsql="select UserName,Password from tblAdmin "
                                 + "where UserName=? and PassWord=?";
                 pstmt = conn.prepareStatement(strsql);
                 pstmt.setString(1, username);
@@ -263,11 +269,11 @@ public void callConnection(){
                     txtUserName.selectAll();
                 }
                 }
-                else
-                {
-                    new ServerConfig().setVisible(true);
-                    this.dispose();
-                }
+               // else
+                //{
+                   //// new ServerConfig().setVisible(true);
+                   // this.dispose();
+                //}
              } catch (SQLException ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(this, "Cannot connect to server!",
@@ -281,9 +287,14 @@ public void callConnection(){
         }
 }
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
-       
+       // TODO add your handling code here:
+        callConnection();
     }//GEN-LAST:event_btnLoginActionPerformed
+
+private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+// TODO add your handling code here:
+    this.dispose();
+}//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,7 +335,7 @@ public void callConnection(){
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnReset;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox cboPermission;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblPassWord;
