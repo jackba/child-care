@@ -9,9 +9,11 @@ package DAO;
  *
  * @author W7
  */
+
+
 import java.sql.*;
 
-public class DAOUtil {
+public class Connect {
 
     static String conStr = "jdbc:sqlserver://localhost;databaseName=ChildCare";
     static String userName = "sa";
