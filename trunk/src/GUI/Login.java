@@ -9,7 +9,7 @@
  * Created on Nov 5, 2011, 1:31:49 AM
  */
 package GUI;
-import DAO.*;
+import DAO.Connect;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -36,6 +36,7 @@ public class Login extends javax.swing.JFrame {
     Resultset rs=null;
     PreparedStatement pstmt;
     Statement st;
+    Main m;
     /** Creates new form Login */
     public Login() {
         initComponents();
@@ -224,7 +225,7 @@ private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         txtUserName.setText("");
        txtPassWord.setText("");
        txtUserName.requestFocus();
-       cboPermission.setSelectedIndex(1);
+       cboPermission.setSelectedIndex(0);
     }//GEN-LAST:event_btnResetActionPerformed
 public void callConnection(){
      try {
@@ -236,7 +237,7 @@ public void callConnection(){
                 txtUserName.requestFocus();
                 return;
             }
-            if (txtPassWord.getPassword().equals("")) {
+            if (txtPassWord.getPassword().length==0) {
                 JOptionPane.showMessageDialog(this, "Please,Enter Password");
                 txtPassWord.requestFocus();
                 return;
@@ -250,7 +251,7 @@ public void callConnection(){
                 if(conn!=null){
                 //creating a string to store the command T-SQL:
                     
-                String strsql="select UserName,Password from tblAdmin "
+                String strsql="select UserName,Password from tblUser "
                                 + "where UserName=? and PassWord=?";
                 pstmt = conn.prepareStatement(strsql);
                 pstmt.setString(1, username);
@@ -258,9 +259,12 @@ public void callConnection(){
                 rs =    (Resultset) pstmt.executeQuery();
                 if(rs.next()){
                  //   InformationAdmin.setStatus("1");
-                    this.setVisible(false);
-                    new MainFormAdmin().setVisible(true);
-                    this.dispose();
+                     this.dispose();
+//                    this.setVisible(false);
+//                    new Main().setVisible(true);
+                     m = new Main(username,password);
+                     m.setVisible(true);
+                   
                 }
                 else{
                     JOptionPane.showMessageDialog(this, "Username or password fail!");
