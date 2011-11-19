@@ -9,38 +9,34 @@
  * Created on Nov 5, 2011, 1:31:49 AM
  */
 package GUI;
+
 import DAO.Connect;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JFrame;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ComboBoxModel;
+import java.sql.SQLException;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
+
 /**
  *
  * @author mr duy
  */
 public class Login extends javax.swing.JFrame {
+
     public static String username;
     public static String password;
-    public static Login login;
-    public static boolean logIsAdmin;
     Connection conn;
-    Resultset rs=null;
     PreparedStatement pstmt;
-    Statement st;
+    ResultSet rs;
     Main m;
+    Connect connect = new Connect();
+
     /** Creates new form Login */
     public Login() {
         initComponents();
-        
+
     }
 
     /** This method is called from within the constructor to
@@ -56,10 +52,8 @@ public class Login extends javax.swing.JFrame {
         lblTittle = new javax.swing.JLabel();
         lblUserName = new javax.swing.JLabel();
         lblPassWord = new javax.swing.JLabel();
-        lblPermission = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         txtPassWord = new javax.swing.JPasswordField();
-        cboPermission = new javax.swing.JComboBox();
         btnLogin = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
@@ -83,10 +77,6 @@ public class Login extends javax.swing.JFrame {
         lblPassWord.setText("PassWord:");
         lblPassWord.setToolTipText("");
 
-        lblPermission.setFont(new java.awt.Font("Tahoma", 0, 14));
-        lblPermission.setForeground(new java.awt.Color(0, 0, 255));
-        lblPermission.setText("Permission:");
-
         txtUserName.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtUserName.setForeground(new java.awt.Color(0, 0, 255));
 
@@ -97,9 +87,6 @@ public class Login extends javax.swing.JFrame {
                 txtPassWordActionPerformed(evt);
             }
         });
-
-        cboPermission.setForeground(new java.awt.Color(0, 0, 255));
-        cboPermission.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "User", "Staff" }));
 
         btnLogin.setForeground(new java.awt.Color(255, 0, 0));
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/unlock.png"))); // NOI18N
@@ -145,15 +132,13 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
+                        .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPermission)
                             .addComponent(lblUserName)
                             .addComponent(lblPassWord))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtUserName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                            .addComponent(cboPermission, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPassWord, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -174,19 +159,13 @@ public class Login extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblTittle)
                         .addGap(41, 41, 41)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPermission)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblUserName))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtPassWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblPassWord))
-                                .addGap(18, 18, 18)
-                                .addComponent(cboPermission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(69, 69, 69))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUserName))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPassWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPassWord)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,24 +174,24 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                .addGap(84, 84, 84))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-549)/2, (screenSize.height-404)/2, 549, 404);
+        setBounds((screenSize.width-549)/2, (screenSize.height-359)/2, 549, 359);
     }// </editor-fold>//GEN-END:initComponents
 
 private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassWordActionPerformed
@@ -223,75 +202,67 @@ private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
         txtUserName.setText("");
-       txtPassWord.setText("");
-       txtUserName.requestFocus();
-       cboPermission.setSelectedIndex(0);
+        txtPassWord.setText("");
+        txtUserName.requestFocus();      
     }//GEN-LAST:event_btnResetActionPerformed
-public void callConnection(){
-     try {
-            conn = DAO.Connect.getConnection();
+    public void callConnection() {
+        try {
+            conn = connect.getConnection();
             username = txtUserName.getText();
             password = new String(txtPassWord.getPassword());
-             if (txtUserName.getText().equals("")) {
+            if (txtUserName.getText().equals("")) {
                 JOptionPane.showMessageDialog(this, "Please,Enter UserName");
                 txtUserName.requestFocus();
                 return;
             }
-            if (txtPassWord.getPassword().length==0) {
+            if (txtPassWord.getPassword().length == 0) {
                 JOptionPane.showMessageDialog(this, "Please,Enter Password");
                 txtPassWord.requestFocus();
                 return;
             }
-             if(cboPermission.getSelectedItem().equals("Admin")){
-          logIsAdmin = true;
-           try {
-              //  @SuppressWarnings("static-access")
-                
-                conn = DAO.Connect.getConnection();
-                if(conn!=null){
-                //creating a string to store the command T-SQL:
-                    
-                String strsql="select UserName,Password from tblUser "
-                                + "where UserName=? and PassWord=?";
-                pstmt = conn.prepareStatement(strsql);
-                pstmt.setString(1, username);
-                pstmt.setString(2, password);
-                rs =    (Resultset) pstmt.executeQuery();
-                if(rs.next()){
-                 //   InformationAdmin.setStatus("1");
-                     this.dispose();
-//                    this.setVisible(false);
-//                    new Main().setVisible(true);
-                     m = new Main(username,password);
-                     m.setVisible(true);
-                   
-                }
-                else{
-                    JOptionPane.showMessageDialog(this, "Username or password fail!");
+            String strsql = "select Permission from tblUser "
+                    + "where UserName=? and PassWord=?";
+            pstmt = conn.prepareStatement(strsql);
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            rs = pstmt.executeQuery();
+            try {
+                if (rs.next()) {
+                    String quyen = rs.getString("Permission");
+                    if (quyen.equals("admin")) {
+                        JOptionPane.showMessageDialog(this, "Chúc mừng admin đã đăng nhập thành công");
+                        this.dispose(); //dong form dang nhap
+                        m = new Main(username, password);
+                        m.setVisible(true);
+
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Chúc mừng " + username + " đã đăng nhập thành công");
+                        this.dispose(); //dong form dang nhap
+                        m = new Main(username, password);
+                        m.setVisible(true);
+
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Tên hoặc mật khẩu sai!");
                     txtPassWord.setText("");
                     txtUserName.requestFocus();
                     txtUserName.selectAll();
                 }
-                }
-               // else
-                //{
-                   //// new ServerConfig().setVisible(true);
-                   // this.dispose();
-                //}
-             } catch (SQLException ex) {
-                    ex.printStackTrace();
-                    JOptionPane.showMessageDialog(this, "Cannot connect to server!",
-                                    "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-             }
 
-        }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Cannot connect to server!",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "");
+            JOptionPane.showMessageDialog(null, "loi");
         }
-}
+    }
+
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-       // TODO add your handling code here:
+        // TODO add your handling code here:
         callConnection();
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -314,6 +285,8 @@ private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
+
                 }
             }
         } catch (ClassNotFoundException ex) {
@@ -339,11 +312,9 @@ private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnReset;
-    private javax.swing.JComboBox cboPermission;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblPassWord;
-    private javax.swing.JLabel lblPermission;
     private javax.swing.JLabel lblTittle;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JPasswordField txtPassWord;
