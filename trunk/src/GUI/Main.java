@@ -6,22 +6,23 @@
 /*
  * Main.java
  *
- * Created on Nov 17, 2011, 12:13:40 AM
+ * Created on Nov 19, 2011, 7:27:18 AM
  */
 package GUI;
 
 /**
  *
- * @author Dell
+ * @author Administrator
  */
 public class Main extends javax.swing.JFrame {
+    private String username;
+    private String password;
 
+    
     /** Creates new form Main */
-    private String usr;
-    private String pass;
-    public Main(String usr,String pass) {
-        this.usr=usr;
-       this.pass=pass;
+    public Main(String username, String password) {
+        this.username = username;
+        this.password = password;
         initComponents();
     }
 
@@ -34,7 +35,6 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblWallpaperMain = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuUser = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -69,8 +69,6 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblWallpaperMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Child care.jpg"))); // NOI18N
-
         menuUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/User.png"))); // NOI18N
         menuUser.setText("Quản lý người dùng");
 
@@ -88,7 +86,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(menuUser);
 
-        menuChild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/logo.png"))); // NOI18N
+        menuChild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/logo.png"))); // NOI18N
         menuChild.setText("Quản lý trẻ");
 
         menuitemAddchild.setText("Thêm trẻ");
@@ -105,7 +103,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(menuChild);
 
-        menuNanny.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/nanny.png"))); // NOI18N
+        menuNanny.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/nanny.png"))); // NOI18N
         menuNanny.setText("Quản lý bảo mẫu");
 
         menuitemNanny.setText("Thêm bảo mẫu");
@@ -122,7 +120,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(menuNanny);
 
-        menuClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Class.png"))); // NOI18N
+        menuClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Class.png"))); // NOI18N
         menuClass.setText("Quản lý lớp");
 
         menuitemAddClass.setText("Thêm lớp học");
@@ -139,7 +137,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(menuClass);
 
-        menuAge.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/logo.png"))); // NOI18N
+        menuAge.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/logo.png"))); // NOI18N
         menuAge.setText("Quản lý độ tuổi");
         menuAge.add(jMenuItem11);
 
@@ -154,7 +152,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(menuAge);
 
-        menuAction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Modify.png"))); // NOI18N
+        menuAction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Modify.png"))); // NOI18N
         menuAction.setText("Quản lý hoạt động của trẻ");
 
         menuitemAddActive.setText("Thêm hoạt động");
@@ -177,20 +175,15 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
-                .addComponent(lblWallpaperMain)
-                .addGap(76, 76, 76))
+            .addGap(0, 790, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblWallpaperMain, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+            .addGap(0, 387, Short.MAX_VALUE)
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-806)/2, (screenSize.height-459)/2, 806, 459);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -235,7 +228,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JLabel lblWallpaperMain;
     private javax.swing.JMenu menuAction;
     private javax.swing.JMenu menuAge;
     private javax.swing.JMenu menuChild;
