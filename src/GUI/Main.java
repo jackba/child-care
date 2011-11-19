@@ -37,10 +37,10 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         menuUser = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        menuitemLogin = new javax.swing.JMenuItem();
-        menuitemLogout = new javax.swing.JMenuItem();
-        menuitemExit = new javax.swing.JMenuItem();
+        menuQuanLyTaiKhoan = new javax.swing.JMenuItem();
+        menuDangNhap = new javax.swing.JMenuItem();
+        menuDangXuat = new javax.swing.JMenuItem();
+        menuThoat = new javax.swing.JMenuItem();
         menuChild = new javax.swing.JMenu();
         menuitemAddchild = new javax.swing.JMenuItem();
         menuEditChild = new javax.swing.JMenuItem();
@@ -67,22 +67,43 @@ public class Main extends javax.swing.JFrame {
         menuitemDeleteActive = new javax.swing.JMenuItem();
         menuitemShowActive = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Main");
 
         menuUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/User.png"))); // NOI18N
         menuUser.setText("Quản lý người dùng");
 
-        jMenuItem1.setText("Quản lý tài khoản");
-        menuUser.add(jMenuItem1);
+        menuQuanLyTaiKhoan.setText("Quản lý tài khoản");
+        menuQuanLyTaiKhoan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuQuanLyTaiKhoanActionPerformed(evt);
+            }
+        });
+        menuUser.add(menuQuanLyTaiKhoan);
 
-        menuitemLogin.setText("Đăng nhập");
-        menuUser.add(menuitemLogin);
+        menuDangNhap.setText("Đăng nhập");
+        menuDangNhap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuDangNhapActionPerformed(evt);
+            }
+        });
+        menuUser.add(menuDangNhap);
 
-        menuitemLogout.setText("Đăng xuất");
-        menuUser.add(menuitemLogout);
+        menuDangXuat.setText("Đăng xuất");
+        menuDangXuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuDangXuatActionPerformed(evt);
+            }
+        });
+        menuUser.add(menuDangXuat);
 
-        menuitemExit.setText("Thoát");
-        menuUser.add(menuitemExit);
+        menuThoat.setText("Thoát");
+        menuThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuThoatActionPerformed(evt);
+            }
+        });
+        menuUser.add(menuThoat);
 
         jMenuBar1.add(menuUser);
 
@@ -186,6 +207,36 @@ public class Main extends javax.swing.JFrame {
         setBounds((screenSize.width-806)/2, (screenSize.height-459)/2, 806, 459);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void menuQuanLyTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuQuanLyTaiKhoanActionPerformed
+        // TODO add your handling code here:
+        FrmQuanLyTaiKhoan frmquanlytaikhoan = new FrmQuanLyTaiKhoan();
+        frmquanlytaikhoan.setVisible(true);
+        
+    }//GEN-LAST:event_menuQuanLyTaiKhoanActionPerformed
+
+    private void menuDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDangXuatActionPerformed
+        // TODO add your handling code here:
+        menuQuanLyTaiKhoan.setEnabled(false);
+        menuChild.setEnabled(false);
+        menuClass.setEnabled(false);
+        menuNanny.setEnabled(false);
+        menuAction.setEnabled(false);
+        menuAge.setEnabled(false);
+        
+    }//GEN-LAST:event_menuDangXuatActionPerformed
+
+    private void menuThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuThoatActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_menuThoatActionPerformed
+
+    private void menuDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDangNhapActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_menuDangNhapActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,7 +274,6 @@ public class Main extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
@@ -232,9 +282,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu menuAge;
     private javax.swing.JMenu menuChild;
     private javax.swing.JMenu menuClass;
+    private javax.swing.JMenuItem menuDangNhap;
+    private javax.swing.JMenuItem menuDangXuat;
     private javax.swing.JMenuItem menuDeleteChild;
     private javax.swing.JMenuItem menuEditChild;
     private javax.swing.JMenu menuNanny;
+    private javax.swing.JMenuItem menuQuanLyTaiKhoan;
+    private javax.swing.JMenuItem menuThoat;
     private javax.swing.JMenu menuUser;
     private javax.swing.JMenuItem menuitemAddActive;
     private javax.swing.JMenuItem menuitemAddClass;
@@ -245,9 +299,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuitemEditActive;
     private javax.swing.JMenuItem menuitemEditClass;
     private javax.swing.JMenuItem menuitemEditNanny;
-    private javax.swing.JMenuItem menuitemExit;
-    private javax.swing.JMenuItem menuitemLogin;
-    private javax.swing.JMenuItem menuitemLogout;
     private javax.swing.JMenuItem menuitemNanny;
     private javax.swing.JMenuItem menuitemShowActive;
     private javax.swing.JMenuItem menuitemShowChild;
