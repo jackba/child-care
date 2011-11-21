@@ -56,23 +56,11 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuitemAddchild">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Th&#xea;m tr&#x1ebb;"/>
+                <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; tr&#x1ebb;"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menuEditChild">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="S&#x1eed;a th&#xf4;ng tin tr&#x1ebb;"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menuDeleteChild">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="X&#xf3;a tr&#x1ebb;"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menuitemShowChild">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Hi&#x1ec3;n th&#x1ecb; th&#xf4;ng tin v&#x1ec1; tr&#x1ebb;"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuitemAddchildActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
