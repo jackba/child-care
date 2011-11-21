@@ -51,7 +51,7 @@
               </Group>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="btnReset" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="255" max="32767" attributes="0"/>
+              <EmptySpace pref="229" max="32767" attributes="0"/>
           </Group>
           <Component id="jScrollPane1" alignment="1" pref="827" max="32767" attributes="0"/>
       </Group>
@@ -157,7 +157,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnReset">
       <Properties>
-        <Property name="text" type="java.lang.String" value="reset"/>
+        <Property name="text" type="java.lang.String" value="reset pass"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
