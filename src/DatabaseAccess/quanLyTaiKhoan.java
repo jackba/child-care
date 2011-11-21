@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -30,7 +31,8 @@ public class quanLyTaiKhoan {
     PreparedStatement pstmt;
     ResultSet rs;
     Connect connect = new Connect();
-    public String a, b, c, d, e, f, g, h, j;
+    public String a, b, c, d, e, g, h, j;
+    public Date f;
 
     public void btnLoad(JTable jTableQLTK) {
 
@@ -69,16 +71,17 @@ public class quanLyTaiKhoan {
         }
     }
 
-    public void loadDetail() {
+    public void loadDetailAdmin() {
         try {
 
             conn = connect.getConnection();
 
-            st = conn.createStatement();
+            
 
-            String strsql = "SELECT * from tblUser";
-
-            rs = st.executeQuery(strsql);
+            String strsql = "SELECT * from tblUser where StaffNo=?";
+             pstmt = conn.prepareStatement(strsql);
+        pstmt.setString(1, FrmQuanLyTaiKhoan.adminIDD);
+            rs = pstmt.executeQuery();
 
             try {
 
@@ -88,7 +91,42 @@ public class quanLyTaiKhoan {
                     c = rs.getString(3);
                     d = rs.getString(4);
                     e = rs.getString(5);
-                    f = rs.getString(6);
+                    f = rs.getDate(6);
+                    g = rs.getString(7);
+                    h = rs.getString(8);
+                    j = rs.getString(9);
+                }
+                rs.close();
+                st.close();
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+     public void loadEditAdmin() {
+        try {
+
+            conn = connect.getConnection();
+
+            
+
+            String strsql = "SELECT * from tblUser where StaffNo=?";
+             pstmt = conn.prepareStatement(strsql);
+        pstmt.setString(1, FrmQuanLyTaiKhoan.adminIDE);
+            rs = pstmt.executeQuery();
+
+            try {
+
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    b = rs.getString(2);
+                    c = rs.getString(3);
+                    d = rs.getString(4);
+                    e = rs.getString(5);
+                    f = rs.getDate(6);
                     g = rs.getString(7);
                     h = rs.getString(8);
                     j = rs.getString(9);

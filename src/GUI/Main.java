@@ -25,7 +25,14 @@ public class Main extends javax.swing.JFrame {
         this.password = password;
         initComponents();
     }
-
+public void logOff(){
+    menuQuanLyTaiKhoan.setEnabled(false);
+        menuChild.setEnabled(false);
+        menuClass.setEnabled(false);
+        menuNanny.setEnabled(false);
+        menuAction.setEnabled(false);
+        menuAge.setEnabled(false);
+}
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -209,12 +216,7 @@ public class Main extends javax.swing.JFrame {
 
     private void menuDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDangXuatActionPerformed
         // TODO add your handling code here:
-        menuQuanLyTaiKhoan.setEnabled(false);
-        menuChild.setEnabled(false);
-        menuClass.setEnabled(false);
-        menuNanny.setEnabled(false);
-        menuAction.setEnabled(false);
-        menuAge.setEnabled(false);
+        logOff();
         
     }//GEN-LAST:event_menuDangXuatActionPerformed
 

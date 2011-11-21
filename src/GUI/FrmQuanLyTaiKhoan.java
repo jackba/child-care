@@ -36,7 +36,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
     ResultSet rs;
     quanLyTaiKhoan nhap = new quanLyTaiKhoan();
     Connect connect = new Connect();
-
+    public static String adminIDD,adminIDE,adminIDR;
     /** Creates new form FrmQuanLyTaiKhoan */
     public FrmQuanLyTaiKhoan() {     
         initComponents();
@@ -67,7 +67,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Verdana", 1, 24));
         jLabel10.setForeground(new java.awt.Color(0, 102, 102));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Quản Lý Tài Khoản");
@@ -111,7 +111,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
             }
         });
 
-        btnReset.setText("reset");
+        btnReset.setText("reset pass");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -151,7 +151,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(btnReset)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -275,6 +275,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Choose a Staff to view");
             return;
         }
+        adminIDD = jTableQLTK.getValueAt(n, 0).toString();
         FrmDetailAdmin frmdetail = new FrmDetailAdmin();
         frmdetail.setVisible(true);
          
@@ -288,6 +289,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Choose a Staff to Edit");
             return;
         }
+        adminIDE = jTableQLTK.getValueAt(n, 0).toString();
         FrmEditAdmin frmedit = new FrmEditAdmin();
         frmedit.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
@@ -295,7 +297,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
           int n= jTableQLTK.getSelectedRow();
-          String a = jTableQLTK.getValueAt(n, 0).toString();
+           adminIDR = jTableQLTK.getValueAt(n, 0).toString();
         if(n==-1)
         {
             JOptionPane.showMessageDialog(this,"Choose a Staff to Reset");
@@ -306,7 +308,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
             String strSql = "update tblUser set PassWord=? where StaffNo=?";
             pstmt = conn.prepareStatement(strSql);
             pstmt.setString(1, "123456");
-            pstmt.setString(2, a);
+            pstmt.setString(2, adminIDR);
             pstmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "sucessfull");
         } catch (Exception e) {
