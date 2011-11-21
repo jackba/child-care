@@ -43,9 +43,6 @@ public class Main extends javax.swing.JFrame {
         menuThoat = new javax.swing.JMenuItem();
         menuChild = new javax.swing.JMenu();
         menuitemAddchild = new javax.swing.JMenuItem();
-        menuEditChild = new javax.swing.JMenuItem();
-        menuDeleteChild = new javax.swing.JMenuItem();
-        menuitemShowChild = new javax.swing.JMenuItem();
         menuNanny = new javax.swing.JMenu();
         menuitemNanny = new javax.swing.JMenuItem();
         menuitemEditNanny = new javax.swing.JMenuItem();
@@ -110,17 +107,13 @@ public class Main extends javax.swing.JFrame {
         menuChild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/logo.png"))); // NOI18N
         menuChild.setText("Quản lý trẻ");
 
-        menuitemAddchild.setText("Thêm trẻ");
+        menuitemAddchild.setText("Quản lý trẻ");
+        menuitemAddchild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuitemAddchildActionPerformed(evt);
+            }
+        });
         menuChild.add(menuitemAddchild);
-
-        menuEditChild.setText("Sửa thông tin trẻ");
-        menuChild.add(menuEditChild);
-
-        menuDeleteChild.setText("Xóa trẻ");
-        menuChild.add(menuDeleteChild);
-
-        menuitemShowChild.setText("Hiển thị thông tin về trẻ");
-        menuChild.add(menuitemShowChild);
 
         jMenuBar1.add(menuChild);
 
@@ -237,6 +230,12 @@ public class Main extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_menuDangNhapActionPerformed
 
+    private void menuitemAddchildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemAddchildActionPerformed
+        // TODO add your handling code here:
+        FrmQuanLyTre frmquanlytre = new FrmQuanLyTre();
+        frmquanlytre.setVisible(true);
+    }//GEN-LAST:event_menuitemAddchildActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -284,8 +283,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu menuClass;
     private javax.swing.JMenuItem menuDangNhap;
     private javax.swing.JMenuItem menuDangXuat;
-    private javax.swing.JMenuItem menuDeleteChild;
-    private javax.swing.JMenuItem menuEditChild;
     private javax.swing.JMenu menuNanny;
     private javax.swing.JMenuItem menuQuanLyTaiKhoan;
     private javax.swing.JMenuItem menuThoat;
@@ -301,7 +298,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuitemEditNanny;
     private javax.swing.JMenuItem menuitemNanny;
     private javax.swing.JMenuItem menuitemShowActive;
-    private javax.swing.JMenuItem menuitemShowChild;
     private javax.swing.JMenuItem menuitemShowClass;
     private javax.swing.JMenuItem menuitemShowNanny;
     // End of variables declaration//GEN-END:variables

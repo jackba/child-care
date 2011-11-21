@@ -10,7 +10,7 @@
  */
 package GUI;
 import DAO.Connect;
-import GUI.FrmDetail;
+import GUI.FrmDetailAdmin;
 import DatabaseAccess.quanLyTaiKhoan;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -275,7 +275,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Choose a Staff to view");
             return;
         }
-        FrmDetail frmdetail = new FrmDetail();
+        FrmDetailAdmin frmdetail = new FrmDetailAdmin();
         frmdetail.setVisible(true);
          
     }//GEN-LAST:event_btnDetailActionPerformed
@@ -288,7 +288,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Choose a Staff to Edit");
             return;
         }
-        FrmEdit frmedit = new FrmEdit();
+        FrmEditAdmin frmedit = new FrmEditAdmin();
         frmedit.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
 
@@ -316,7 +316,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        FrmAdd frmadd = new FrmAdd();
+        FrmAddAdmin frmadd = new FrmAddAdmin();
         frmadd.setVisible(true);
     }//GEN-LAST:event_btnAddActionPerformed
 

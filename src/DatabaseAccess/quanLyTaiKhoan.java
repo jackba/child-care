@@ -5,7 +5,7 @@
 package DatabaseAccess;
 
 import DAO.Connect;
-import GUI.FrmDetail;
+import GUI.FrmDetailAdmin;
 import GUI.FrmQuanLyTaiKhoan;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
