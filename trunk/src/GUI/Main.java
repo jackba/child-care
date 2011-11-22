@@ -10,29 +10,34 @@
  */
 package GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Administrator
  */
 public class Main extends javax.swing.JFrame {
+
     private String username;
     private String password;
 
-    
     /** Creates new form Main */
     public Main(String username, String password) {
         this.username = username;
         this.password = password;
         initComponents();
+        this.lblOnline.setText(username + " dang online!");
     }
-public void logOff(){
-    menuQuanLyTaiKhoan.setEnabled(false);
+
+    public void logOff() {
+        menuQuanLyTaiKhoan.setEnabled(false);
         menuChild.setEnabled(false);
         menuClass.setEnabled(false);
         menuNanny.setEnabled(false);
         menuAction.setEnabled(false);
         menuAge.setEnabled(false);
-}
+    }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -42,6 +47,10 @@ public void logOff(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblWallpaper = new javax.swing.JLabel();
+        lblOnline = new javax.swing.JLabel();
+        lblPiconline = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuUser = new javax.swing.JMenu();
         menuQuanLyTaiKhoan = new javax.swing.JMenuItem();
@@ -51,10 +60,7 @@ public void logOff(){
         menuChild = new javax.swing.JMenu();
         menuitemAddchild = new javax.swing.JMenuItem();
         menuNanny = new javax.swing.JMenu();
-        menuitemNanny = new javax.swing.JMenuItem();
-        menuitemEditNanny = new javax.swing.JMenuItem();
-        menuitemDeleteNanny = new javax.swing.JMenuItem();
-        menuitemShowNanny = new javax.swing.JMenuItem();
+        menuitemQuanLyBaoMau = new javax.swing.JMenuItem();
         menuClass = new javax.swing.JMenu();
         menuitemAddClass = new javax.swing.JMenuItem();
         menuitemEditClass = new javax.swing.JMenuItem();
@@ -71,8 +77,46 @@ public void logOff(){
         menuitemDeleteActive = new javax.swing.JMenuItem();
         menuitemShowActive = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblOnline.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblOnline.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblPiconline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/online.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(183, 183, 183)
+                        .addComponent(lblWallpaper))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblPiconline, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblOnline, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(490, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblWallpaper)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblPiconline)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblOnline, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))))
+        );
 
         menuUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/User.png"))); // NOI18N
         menuUser.setText("Quản lý người dùng");
@@ -127,17 +171,13 @@ public void logOff(){
         menuNanny.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/nanny.png"))); // NOI18N
         menuNanny.setText("Quản lý bảo mẫu");
 
-        menuitemNanny.setText("Thêm bảo mẫu");
-        menuNanny.add(menuitemNanny);
-
-        menuitemEditNanny.setText("Sửa thông tin bảo mẫu");
-        menuNanny.add(menuitemEditNanny);
-
-        menuitemDeleteNanny.setText("Xóa bảo mẫu");
-        menuNanny.add(menuitemDeleteNanny);
-
-        menuitemShowNanny.setText("Hiển thị thông tin bảo mẫu");
-        menuNanny.add(menuitemShowNanny);
+        menuitemQuanLyBaoMau.setText("Quản lý bảo mẫu");
+        menuitemQuanLyBaoMau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuitemQuanLyBaoMauActionPerformed(evt);
+            }
+        });
+        menuNanny.add(menuitemQuanLyBaoMau);
 
         jMenuBar1.add(menuNanny);
 
@@ -196,33 +236,42 @@ public void logOff(){
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 387, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-806)/2, (screenSize.height-459)/2, 806, 459);
+        setBounds((screenSize.width-806)/2, (screenSize.height-356)/2, 806, 356);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuQuanLyTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuQuanLyTaiKhoanActionPerformed
         // TODO add your handling code here:
         FrmQuanLyTaiKhoan frmquanlytaikhoan = new FrmQuanLyTaiKhoan();
         frmquanlytaikhoan.setVisible(true);
-        
+
     }//GEN-LAST:event_menuQuanLyTaiKhoanActionPerformed
 
     private void menuDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDangXuatActionPerformed
         // TODO add your handling code here:
         logOff();
-        
+
     }//GEN-LAST:event_menuDangXuatActionPerformed
 
     private void menuThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuThoatActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        //System.exit(0);
+        int choice = JOptionPane.showConfirmDialog(this, "Are you exit?", "Exit",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_menuThoatActionPerformed
 
     private void menuDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDangNhapActionPerformed
@@ -237,6 +286,12 @@ public void logOff(){
         FrmQuanLyTre frmquanlytre = new FrmQuanLyTre();
         frmquanlytre.setVisible(true);
     }//GEN-LAST:event_menuitemAddchildActionPerformed
+
+private void menuitemQuanLyBaoMauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemQuanLyBaoMauActionPerformed
+// TODO add your handling code here:
+    FrmQuanLyBaoMau frmquanlybaomau = new FrmQuanLyBaoMau();
+    frmquanlybaomau.setVisible(true);
+}//GEN-LAST:event_menuitemQuanLyBaoMauActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,7 +324,7 @@ public void logOff(){
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Main(null,null).setVisible(true);
+                new Main(null, null).setVisible(true);
             }
         });
     }
@@ -279,6 +334,10 @@ public void logOff(){
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblOnline;
+    private javax.swing.JLabel lblPiconline;
+    private javax.swing.JLabel lblWallpaper;
     private javax.swing.JMenu menuAction;
     private javax.swing.JMenu menuAge;
     private javax.swing.JMenu menuChild;
@@ -294,13 +353,10 @@ public void logOff(){
     private javax.swing.JMenuItem menuitemAddchild;
     private javax.swing.JMenuItem menuitemDeleteActive;
     private javax.swing.JMenuItem menuitemDeleteClass;
-    private javax.swing.JMenuItem menuitemDeleteNanny;
     private javax.swing.JMenuItem menuitemEditActive;
     private javax.swing.JMenuItem menuitemEditClass;
-    private javax.swing.JMenuItem menuitemEditNanny;
-    private javax.swing.JMenuItem menuitemNanny;
+    private javax.swing.JMenuItem menuitemQuanLyBaoMau;
     private javax.swing.JMenuItem menuitemShowActive;
     private javax.swing.JMenuItem menuitemShowClass;
-    private javax.swing.JMenuItem menuitemShowNanny;
     // End of variables declaration//GEN-END:variables
 }
