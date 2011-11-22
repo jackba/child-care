@@ -118,7 +118,7 @@ public class FrmQuanLyTaiKhoan extends javax.swing.JFrame {
             }
         });
 
-        cmbSelect.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Id", "Name", " " }));
+        cmbSelect.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Id", "Name" }));
 
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

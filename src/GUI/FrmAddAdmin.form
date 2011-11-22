@@ -106,15 +106,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtPassword" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtBirthday" max="32767" attributes="1"/>
-                                      <Component id="txtPermission" alignment="0" pref="133" max="32767" attributes="1"/>
-                                  </Group>
-                                  <Component id="txtAddress" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <Component id="txtPermission" alignment="1" pref="133" max="32767" attributes="1"/>
+                                  <Component id="txtAddress" alignment="0" pref="133" max="32767" attributes="1"/>
+                                  <Component id="txtBirthday" alignment="0" pref="133" max="32767" attributes="0"/>
                               </Group>
                               <Component id="txtSex" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="69" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                   <Component id="btnExit" min="-2" max="-2" attributes="1"/>
@@ -185,7 +183,7 @@
                           <Component id="btnExit" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="72" max="32767" attributes="0"/>
+                  <EmptySpace pref="62" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -267,8 +265,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="txtBirthday">
-        </Component>
         <Component class="javax.swing.JComboBox" name="txtSex">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -278,6 +274,8 @@
               </StringArray>
             </Property>
           </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="txtBirthday">
         </Component>
       </SubComponents>
     </Container>
