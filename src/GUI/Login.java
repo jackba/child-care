@@ -11,8 +11,6 @@
 package GUI;
 
 import DAO.Connect;
-import DatabaseAccess.SizeMonition;
-import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,8 +24,7 @@ import javax.swing.JTable;
  * @author mr duy
  */
 public class Login extends javax.swing.JFrame {
-    static int x;
-    static int y;
+
     public static String username;
     public static String password;
     Connection conn;
@@ -39,15 +36,7 @@ public class Login extends javax.swing.JFrame {
     /** Creates new form Login */
     public Login() {
         initComponents();
-        x=this.getWidth();
-        y=this.getHeight();
-        motion();
 
-    }
-      private void motion()
-    {
-        this.setSize(0, 0);
-        new Thread(new SizeMonition(this, x,y)).start();
     }
 
     /** This method is called from within the constructor to
@@ -279,12 +268,7 @@ private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
 private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
 // TODO add your handling code here:
-  //  this.dispose();
-            int choice = JOptionPane.showConfirmDialog(this, "Are you exit?", "Exit",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (choice == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+    this.dispose();
 }//GEN-LAST:event_btnExitActionPerformed
 
     /**
