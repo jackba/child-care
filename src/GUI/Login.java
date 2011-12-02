@@ -11,6 +11,8 @@
 package GUI;
 
 import DAO.Connect;
+import DatabaseAccess.SizeMonition;
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,19 +26,28 @@ import javax.swing.JTable;
  * @author mr duy
  */
 public class Login extends javax.swing.JFrame {
-
+    static int x;
+    static int y;
     public static String username;
     public static String password;
     Connection conn;
     PreparedStatement pstmt;
     ResultSet rs;
-    Main m;
+    FrmMain m;
     Connect connect = new Connect();
 
     /** Creates new form Login */
     public Login() {
         initComponents();
+        x=this.getWidth();
+        y=this.getHeight();
+        motion();
 
+    }
+      private void motion()
+    {
+        this.setSize(0, 0);
+        new Thread(new SizeMonition(this, x,y)).start();
     }
 
     /** This method is called from within the constructor to
@@ -174,7 +185,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84))
+                .addGap(48, 48, 48))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,11 +198,11 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-549)/2, (screenSize.height-359)/2, 549, 359);
+        setBounds((screenSize.width-549)/2, (screenSize.height-323)/2, 549, 323);
     }// </editor-fold>//GEN-END:initComponents
 
 private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassWordActionPerformed
@@ -232,13 +243,13 @@ private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                     if (quyen.equals("admin")) {
                         JOptionPane.showMessageDialog(this, "Chúc mừng admin đã đăng nhập thành công");
                         this.dispose(); //dong form dang nhap
-                        m = new Main(username, password);
+                        m = new FrmMain(username, password);
                         m.setVisible(true);
 
                     } else {
                         JOptionPane.showMessageDialog(this, "Chúc mừng " + username + " đã đăng nhập thành công");
                         this.dispose(); //dong form dang nhap
-                        m = new Main(username, password);
+                        m = new FrmMain(username, password);
                         m.setVisible(true);
                         m.logOff();
                     }
@@ -268,7 +279,12 @@ private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
 private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
 // TODO add your handling code here:
-    this.dispose();
+  //  this.dispose();
+            int choice = JOptionPane.showConfirmDialog(this, "Are you exit?", "Exit",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
 }//GEN-LAST:event_btnExitActionPerformed
 
     /**

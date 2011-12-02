@@ -6,7 +6,7 @@ package DatabaseAccess;
 
 import DAO.Connect;
 import GUI.FrmDetailAdmin;
-import GUI.FrmManagementUser;
+import GUI.FrmQuanLyTaiKhoan;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -80,7 +80,7 @@ public class quanLyTaiKhoan {
 
             String strsql = "SELECT * from tblUser where StaffNo=?";
              pstmt = conn.prepareStatement(strsql);
-        pstmt.setString(1, FrmManagementUser.adminIDD);
+        pstmt.setString(1, FrmQuanLyTaiKhoan.adminIDD);
             rs = pstmt.executeQuery();
 
             try {
@@ -115,7 +115,7 @@ public class quanLyTaiKhoan {
 
             String strsql = "SELECT * from tblUser where StaffNo=?";
              pstmt = conn.prepareStatement(strsql);
-        pstmt.setString(1, FrmManagementUser.adminIDE);
+        pstmt.setString(1, FrmQuanLyTaiKhoan.adminIDE);
             rs = pstmt.executeQuery();
 
             try {

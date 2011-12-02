@@ -1,3 +1,4 @@
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -5,7 +6,7 @@
 package DatabaseAccess;
 
 import DAO.Connect;
-import GUI.FrmQuanLyBaoMau;
+import GUI.FrmQuanLyBaoMau1;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,17 +22,17 @@ import javax.swing.table.DefaultTableModel;
  * @author Dell
  */
 public class quanLyBaoMau {
-
+  public static String NannyID;
     DefaultTableModel model;
     Connection conn;
     Statement st;
     PreparedStatement pstmt;
     ResultSet rs;
     Connect connect = new Connect();
-    public String txtNannyID, txtName, txtAddress, txtContactNumber, a, b, c, d;
-    public float txtChargePaidToHer, f;
-    public int txtWorkingHours, e;
-    public Date txtDateOfBirth, h;
+    public String txtNannyID, txtName, txtAddress, txtContactNumber;
+    public float txtChargePaidToHer;
+    public int txtWorkingHours;
+    public Date txtDateOfBirth;
 
     public void Load(JTable jTableQLBM) {
 
@@ -110,6 +111,69 @@ public class quanLyBaoMau {
         }
     }
 }
+
+//
+//    public void fillDataDetailNanny() {
+//        try {
+//
+//            conn = connect.getConnection();
+//            String strSql = "select NannyID,Name,DateOfBirth,Address,ContactNumber,ChargePaidToHer,WorkingHours from tblNanny where NannyID=?";
+//            pstmt = conn.prepareStatement(strSql);
+//            pstmt.setString(1, FrmQuanLyBaoMau.NannyIDD);
+//
+//            rs = pstmt.executeQuery();
+//            while (rs.next()) {
+//                txtNannyID = rs.getString(1);
+//                txtName = rs.getString(2);
+//                txtDateOfBirth = rs.getDate(3);
+//                txtAddress = rs.getString(4);
+//                txtContactNumber = rs.getString(5);
+//                txtChargePaidToHer = rs.getFloat(6);
+//                txtWorkingHours = rs.getInt(7);
+//            }
+//            conn.close();
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+
+//    public void fillDataEditNanny() {
+//        try {
+//
+//            conn = connect.getConnection();
+//            String strSql = "select NannyID,Name,DateOfBirth,Address,ContactNumber,ChargePaidToHer,WorkingHours from tblNanny where NannyID=?";
+//            pstmt = conn.prepareStatement(strSql);
+//            pstmt.setString(1, FrmQuanLyBaoMau.NannyIDE);
+//            rs = pstmt.executeQuery();
+//            while (rs.next()) {
+//                a = rs.getString(1);
+//                b = rs.getString(2);
+//                h = rs.getDate(3);
+//                c = rs.getString(4);
+//                d = rs.getString(5);
+//                e = rs.getInt(6);
+//                f = rs.getFloat(7);
+//
+//            }
+//            conn.close();
+//
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//
+//        }
+//    }
+//}
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+
+
+/**
+ *
+ * @author Dell
+ */
+
 //
 //    public void fillDataDetailNanny() {
 //        try {
