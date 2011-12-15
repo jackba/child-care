@@ -338,7 +338,8 @@ private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         }
     }
     try {
-        String strsql = "Update tblNanny set NannyID=?,Name=?,DateOfBirth=?,Address=?,ContactNumber=?,ChargePaidToHer=?,WorkingHours=? where NannyID=?";
+        conn=connect.getConnection();
+        String strsql = "update tblNanny set NannyID=?,Name=?,DateOfBirth=?,Address=?,ContactNumber=?,ChargePaidToHer=?,WorkingHours=? where NannyID=?";
         pstmt = conn.prepareStatement(strsql);
         pstmt.setString(1, txtNannyID.getText());
         pstmt.setString(2, txtName.getText());
