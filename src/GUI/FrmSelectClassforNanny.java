@@ -212,7 +212,6 @@ private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 
     conn = connect.getConnection();
         int n = 0;
-    if (conn != null) {
         try {
             String strSql = "insert tblDetailsClassNanny values(?,?)";
             pstmt = conn.prepareStatement(strSql);
@@ -228,11 +227,6 @@ private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
             JOptionPane.showMessageDialog(this, "Error:" + ex.getMessage());
             return;
         }
-
-    } else {
-        JOptionPane.showMessageDialog(this, "Connect false");
-
-    }
 }//GEN-LAST:event_btnAddActionPerformed
 
     /**

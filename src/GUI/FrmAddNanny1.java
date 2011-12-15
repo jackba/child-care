@@ -305,25 +305,18 @@ private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
  try {
      conn=connect.getConnection();
      String strsql = "insert tblNanny values (?,?,?,?,?,?,?)"; 
-        pstmt = conn.prepareStatement(strsql);
-        JOptionPane.showMessageDialog(null, "ss"); 
+        pstmt = conn.prepareStatement(strsql); 
         pstmt.setString(1, txtNannyID.getText());
-        pstmt.setString(2, txtName.getText());
-        
-         
+        pstmt.setString(2, txtName.getText());          
         if (txtBirthday.getDate() == null) {
             JOptionPane.showMessageDialog(this, "Please,Enter Birthday");
         } else {
             pstmt.setString(3, txtBirthday.getCalendar().getTime().toLocaleString());
-        }
-        JOptionPane.showMessageDialog(null, "ss");  
+        }  
         pstmt.setString(4, txtAddress.getText());
         pstmt.setString(5, txtContactNumber.getText());
         pstmt.setFloat(6,Float.parseFloat(txtCharge.getText()));
-        JOptionPane.showMessageDialog(null,Float.parseFloat(txtCharge.getText()));
-         //pstmt.setString(7, txtWorkingHours.getText());
         pstmt.setInt(7, Integer.parseInt(txtWorkingHours.getText()));
-        JOptionPane.showMessageDialog(null, Integer.parseInt(txtWorkingHours.getText()));
         pstmt.executeUpdate();
         JOptionPane.showMessageDialog(this, "Insert successfully!");
         this.dispose();

@@ -47,7 +47,6 @@ public class FrmDetailClass extends javax.swing.JFrame {
     private void filldata() {
         String strSql = "select ClassID,ClassName,AgeGroupID from tblClass where ClassID=?";
         conn = connect.getConnection();
-        if (conn != null) {
             try {
                 pstmt = conn.prepareStatement(strSql);
                pstmt.setString(1, FrmQuanLyLop.ClassIDD);
@@ -64,11 +63,7 @@ public class FrmDetailClass extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error:" + ex.getMessage());
                 return;
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Connection false");
-
-        }
-    }
+  }
 
     public void GettotalChild() {
 
@@ -90,7 +85,7 @@ public class FrmDetailClass extends javax.swing.JFrame {
 
     public void InitListActiveOfClass(JList jlist) {
         try {
-            String MySql = "SELECT d.ActiveID,c.ActiveName from tblDetaildActiveClass d "
+            String MySql = "SELECT d.ActiveID,c.ActiveName from tblDetailsActiveClass d "
                     + "join tblActivities c on d.ActiveID=c.ActiveID where ClassID=?";
             conn = connect.getConnection();
             pstmt = conn.prepareStatement(MySql);

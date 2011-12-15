@@ -85,7 +85,7 @@ public class FrmEditClass extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnAdd = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
 
@@ -140,11 +140,11 @@ public class FrmEditClass extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 0, 51));
         jLabel1.setText("Edit Class");
 
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/save1.png"))); // NOI18N
-        btnAdd.setText("Save");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/save1.png"))); // NOI18N
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
 
@@ -172,7 +172,7 @@ public class FrmEditClass extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,12 +185,12 @@ public class FrmEditClass extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(11, 11, 11)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdd))
+                    .addComponent(btnSave))
                 .addContainerGap())
         );
 
@@ -198,7 +198,7 @@ public class FrmEditClass extends javax.swing.JFrame {
         setBounds((screenSize.width-416)/2, (screenSize.height-338)/2, 416, 338);
     }// </editor-fold>//GEN-END:initComponents
 
-private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
     if (txtClassName.getText().equals("")) {
         JOptionPane.showMessageDialog(this, "Please,Enter ClassName");
         txtClassName.requestFocus();
@@ -229,7 +229,7 @@ private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     } else {
         JOptionPane.showMessageDialog(this, "Conection false");
     }
-}//GEN-LAST:event_btnAddActionPerformed
+}//GEN-LAST:event_btnSaveActionPerformed
 
 private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
     this.dispose();
@@ -271,9 +271,9 @@ private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
