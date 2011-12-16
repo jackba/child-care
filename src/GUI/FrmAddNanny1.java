@@ -320,9 +320,7 @@ private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         pstmt.executeUpdate();
         JOptionPane.showMessageDialog(this, "Insert successfully!");
         this.dispose();
-        
-        conn.close();
-
+         conn.close();
     } catch (Exception ex) {
         JOptionPane.showMessageDialog(this, "Error:" + ex.getMessage()+ex.getLocalizedMessage());
         return;
