@@ -9,6 +9,7 @@
  * Created on Nov 27, 2011, 10:52:18 PM
  */
 package GUI;
+
 import DAO.Connect;
 import DatabaseAccess.quanLyBaoMau;
 import java.sql.Connection;
@@ -17,21 +18,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dell
  */
 public class FrmEditNanny1 extends javax.swing.JFrame {
+
     Connect connect = new Connect();
     Connection conn;
     ResultSet rs;
     PreparedStatement pstmt;
     quanLyBaoMau nhap = new quanLyBaoMau();
+
     /** Creates new form FrmEditNanny1 */
     public FrmEditNanny1() {
         initComponents();
-         fillDataEditNanny();
+        fillDataEditNanny();
     }
+
     private void fillDataEditNanny() {
         try {
 
@@ -45,12 +50,9 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
                 txtName.setText(rs.getString(2));
                 txtBirthday.setDate(rs.getDate(3));
                 txtAddress.setText(rs.getString(4));
-                txtContactNumber.setText(rs.getString(5)); 
+                txtContactNumber.setText(rs.getString(5));
                 txtCharge.setText(rs.getString(6));
                 txtWorkingHours.setText(rs.getString(7));
-                
-
-
             }
             conn.close();
 
@@ -271,28 +273,28 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 private void txtWorkingHoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWorkingHoursActionPerformed
-        // TODO add your handling code here:
+    // TODO add your handling code here:
 }//GEN-LAST:event_txtWorkingHoursActionPerformed
 
 private void txtChargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtChargeActionPerformed
-        // TODO add your handling code here:
+    // TODO add your handling code here:
 }//GEN-LAST:event_txtChargeActionPerformed
 
 private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-      this.dispose();
+    this.dispose();
 }//GEN-LAST:event_btnCloseActionPerformed
 
 private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        txtAddress.setText("");
-        txtBirthday.setDate(null);
-        txtName.setText("");
-        txtContactNumber.setText("");
-        txtWorkingHours.setText("");
-        txtCharge.setText("");
+    txtAddress.setText("");
+    txtBirthday.setDate(null);
+    txtName.setText("");
+    txtContactNumber.setText("");
+    txtWorkingHours.setText("");
+    txtCharge.setText("");
 }//GEN-LAST:event_btnResetActionPerformed
 
 private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-  if (txtNannyID.getText().equals("")) {
+    if (txtNannyID.getText().equals("")) {
         JOptionPane.showMessageDialog(this, "Please,Enter NannyID");
         txtNannyID.requestFocus();
         return;
@@ -312,8 +314,8 @@ private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         txtContactNumber.requestFocus();
         return;
     }
-    
-       if(txtContactNumber.getText().equals("")){
+
+    if (txtContactNumber.getText().equals("")) {
         JOptionPane.showMessageDialog(this, "Contact NumBer must Number");
         txtContactNumber.requestFocus();
         return;
@@ -338,26 +340,25 @@ private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         }
     }
     try {
-        conn=connect.getConnection();
-        String strsql = "update tblNanny set NannyID=?,Name=?,DateOfBirth=?,Address=?,ContactNumber=?,ChargePaidToHer=?,WorkingHours=? where NannyID=?";
+        conn = connect.getConnection();
+        String strsql = "Update tblNanny set NannyID=?,Name=?,DateOfBirth=?,Address=?,ContactNumber=?,ChargePaidToHer=?,WorkingHours=? where NannyID=?";
         pstmt = conn.prepareStatement(strsql);
         pstmt.setString(1, txtNannyID.getText());
         pstmt.setString(2, txtName.getText());
         if (txtBirthday.getDate() == null) {
             JOptionPane.showMessageDialog(this, "Please,Enter Birthday");
         } else {
-            pstmt.setString(3, txtBirthday.getCalendar().getTime().toString());
+            pstmt.setString(3, txtBirthday.getCalendar().getTime().toLocaleString());
         }
         pstmt.setString(4, txtAddress.getText());
         pstmt.setString(5, txtContactNumber.getText());
         pstmt.setFloat(6, Float.parseFloat(txtCharge.getText()));
         pstmt.setInt(7, Integer.parseInt(txtWorkingHours.getText()));
+        pstmt.setString(8,FrmQuanLyBaoMau1.NannyIDE);
         pstmt.executeUpdate();
         JOptionPane.showMessageDialog(this, "Update successfully!");
         this.dispose();
-
         conn.close();
-
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(this, "Error:" + ex.getMessage());
         return;

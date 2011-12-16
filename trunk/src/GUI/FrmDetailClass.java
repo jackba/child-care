@@ -27,8 +27,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmDetailClass extends javax.swing.JFrame {
 
-    private boolean chooseActive;
-    private String ID2;
+   // private boolean chooseActive;
+   // private String ID2;
     Connect connect = new Connect();
     Connection conn;
     ResultSet rs;
@@ -85,15 +85,15 @@ public class FrmDetailClass extends javax.swing.JFrame {
 
     public void InitListActiveOfClass(JList jlist) {
         try {
+            conn = connect.getConnection();
             String MySql = "SELECT d.ActiveID,c.ActiveName from tblDetailsActiveClass d "
                     + "join tblActivities c on d.ActiveID=c.ActiveID where ClassID=?";
-            conn = connect.getConnection();
-            pstmt = conn.prepareStatement(MySql);
+             pstmt = conn.prepareStatement(MySql);
             pstmt.setString(1, FrmQuanLyLop.ClassIDD);
              rs = pstmt.executeQuery();
             while (rs.next()) {
                 String Id = rs.getString(1);
-                ((DefaultListModel) ListActive.getModel()).addElement("  (ID:" + Id + ")");
+                ((DefaultListModel) ListActive.getModel()).addElement("(ID:"+Id +")");
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -122,45 +122,44 @@ public class FrmDetailClass extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ListActive = new javax.swing.JList();
         jLabel8 = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 30)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 30));
         jLabel1.setText("View information Class");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lblClassID.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblClassID.setFont(new java.awt.Font("Tahoma", 1, 14));
         lblClassID.setText("Class ID :");
 
-        lblClassName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblClassName.setFont(new java.awt.Font("Tahoma", 1, 14));
         lblClassName.setText("ClassName :");
 
-        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 1, 14));
         lblAgeGroupID.setText("AgeGroup ID:");
 
-        lblTotalChild.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTotalChild.setFont(new java.awt.Font("Tahoma", 1, 14));
         lblTotalChild.setText("TotalChild :");
 
-        lbID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbID.setFont(new java.awt.Font("Tahoma", 0, 14));
         lbID.setText("a");
 
-        lbName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbName.setFont(new java.awt.Font("Tahoma", 0, 14));
         lbName.setText("b");
 
-        lbAge.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbAge.setFont(new java.awt.Font("Tahoma", 0, 14));
         lbAge.setText("c");
 
-        lbtotalchild.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbtotalchild.setFont(new java.awt.Font("Tahoma", 0, 14));
         lbtotalchild.setText("d");
 
         ListActive.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(ListActive);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel8.setText("List Active :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -177,11 +176,11 @@ public class FrmDetailClass extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addGap(80, 80, 80)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(lbAge, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(lbtotalchild, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addComponent(lbAge, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addComponent(lbtotalchild, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -210,13 +209,6 @@ public class FrmDetailClass extends javax.swing.JFrame {
                 .addGap(34, 34, 34))
         );
 
-        btnDelete.setText("Delete");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +221,6 @@ public class FrmDetailClass extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -239,56 +230,25 @@ public class FrmDetailClass extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(133, 133, 133)
                         .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((screenSize.width-416)/2, (screenSize.height-471)/2, 416, 471);
     }// </editor-fold>//GEN-END:initComponents
-
-private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-    try {
-        if (ListActive.getSelectedIndex() != -1) {
-            chooseActive = true;
-        }
-        if (!chooseActive) {
-            JOptionPane.showMessageDialog(this, "Please choose a Active!");
-            return;
-        }
-        String str = ListActive.getSelectedValue().toString();
-        ID2 = str.substring(str.indexOf(":") + 1, str.length() - 1);
-        conn = connect.getConnection();
-        String strSql = "delete tblDetail_Active_Class where ClassID=? and ActiveID=?";
-        pstmt = conn.prepareStatement(strSql);
-        pstmt.setString(1, FrmQuanLyLop.ClassID);
-        pstmt.setString(2, ID2);
-        pstmt.executeUpdate();
-        ListActive.setModel(new DefaultListModel());
-        InitListActiveOfClass(ListActive);
-        conn.close();
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error:" + ex.getMessage());
-    }
-}//GEN-LAST:event_btnDeleteActionPerformed
 
 private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
     this.dispose();
@@ -332,7 +292,6 @@ private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList ListActive;
     private javax.swing.JButton btnClose;
-    private javax.swing.JButton btnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;

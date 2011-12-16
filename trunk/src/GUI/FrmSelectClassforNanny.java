@@ -215,7 +215,7 @@ private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         try {
             String strSql = "insert tblDetailsClassNanny values(?,?)";
             pstmt = conn.prepareStatement(strSql);
-            ClassID = tblClass.getValueAt(tblClass.getSelectedRow(), 1).toString();
+            ClassID = tblClass.getValueAt(tblClass.getSelectedRow(), 0).toString();
             pstmt.setString(1, ClassID);
             pstmt.setString(2, FrmQuanLyBaoMau1.NannyIDD);
             pstmt.executeUpdate();
