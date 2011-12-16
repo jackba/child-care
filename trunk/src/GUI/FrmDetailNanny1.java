@@ -217,7 +217,7 @@ public class FrmDetailNanny1 extends javax.swing.JFrame {
         );
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 30)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 30));
         jLabel1.setText("View information Nanny");
 
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N

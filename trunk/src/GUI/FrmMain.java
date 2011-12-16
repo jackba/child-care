@@ -262,8 +262,8 @@ private void menuitemClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 
 private void menuitemAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemAgeActionPerformed
 // TODO add your handling code here:
-                //FrmQuanLyTuoi frmquanlytuoi = new FrmQuanLyTuoi();
-   // frmquanlytuoi.setVisible(true);
+    FrmQuanLyTuoi frmquanlytuoi = new FrmQuanLyTuoi();
+    frmquanlytuoi.setVisible(true);
 }//GEN-LAST:event_menuitemAgeActionPerformed
 
     /**
