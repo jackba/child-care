@@ -95,7 +95,8 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnSave.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12));
+        btnSave.setForeground(new java.awt.Color(0, 0, 204));
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/save1.png"))); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +105,8 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
             }
         });
 
-        btnReset.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnReset.setFont(new java.awt.Font("Tahoma", 0, 12));
+        btnReset.setForeground(new java.awt.Color(0, 0, 204));
         btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reset.png"))); // NOI18N
         btnReset.setText("Reset");
         btnReset.setPreferredSize(new java.awt.Dimension(87, 31));
@@ -114,7 +116,8 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
             }
         });
 
-        btnClose.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12));
+        btnClose.setForeground(new java.awt.Color(0, 0, 204));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
         btnClose.setPreferredSize(new java.awt.Dimension(87, 31));
@@ -124,40 +127,64 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
             }
         });
 
+        txtName.setFont(new java.awt.Font("Tahoma", 0, 14));
+        txtName.setForeground(new java.awt.Color(0, 0, 204));
+
+        txtBirthday.setForeground(new java.awt.Color(0, 0, 204));
         txtBirthday.setDateFormatString("MMMM/dd/yyyy");
 
+        txtAddress.setFont(new java.awt.Font("Tahoma", 0, 14));
+        txtAddress.setForeground(new java.awt.Color(0, 0, 204));
+
+        txtContactNumber.setFont(new java.awt.Font("Tahoma", 0, 14));
+        txtContactNumber.setForeground(new java.awt.Color(0, 0, 204));
+
+        txtCharge.setFont(new java.awt.Font("Tahoma", 0, 14));
+        txtCharge.setForeground(new java.awt.Color(0, 0, 204));
         txtCharge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtChargeActionPerformed(evt);
             }
         });
 
+        txtWorkingHours.setFont(new java.awt.Font("Tahoma", 0, 14));
+        txtWorkingHours.setForeground(new java.awt.Color(0, 0, 204));
         txtWorkingHours.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWorkingHoursActionPerformed(evt);
             }
         });
 
-        lblName.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblName.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblName.setForeground(new java.awt.Color(0, 0, 204));
         lblName.setText("Name");
 
-        lblBirthday.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblBirthday.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblBirthday.setForeground(new java.awt.Color(0, 0, 204));
         lblBirthday.setText("Birthday");
 
-        lblAddress.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblAddress.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblAddress.setForeground(new java.awt.Color(0, 0, 204));
         lblAddress.setText("Address");
 
-        lblContacNumber.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblContacNumber.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblContacNumber.setForeground(new java.awt.Color(0, 0, 204));
         lblContacNumber.setText("Contact Number");
 
-        lblCharge.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblCharge.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblCharge.setForeground(new java.awt.Color(0, 0, 204));
         lblCharge.setText("Charge");
 
-        lblWorkingHours.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblWorkingHours.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblWorkingHours.setForeground(new java.awt.Color(0, 0, 204));
         lblWorkingHours.setText("WorkingHours");
 
-        lblNannyID.setFont(new java.awt.Font("Times New Roman", 0, 14));
+        lblNannyID.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblNannyID.setForeground(new java.awt.Color(0, 0, 204));
         lblNannyID.setText("NannyID");
+
+        txtNannyID.setFont(new java.awt.Font("Tahoma", 0, 14));
+        txtNannyID.setForeground(new java.awt.Color(0, 0, 204));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,40 +193,35 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(162, 162, 162))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblNannyID)
-                                .addGap(37, 37, 37)
-                                .addComponent(txtNannyID))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblName)
-                                    .addComponent(lblAddress)
-                                    .addComponent(lblBirthday))
-                                .addGap(37, 37, 37)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtAddress)
-                                    .addComponent(txtBirthday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))))
-                        .addGap(83, 83, 83)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblContacNumber)
-                            .addComponent(lblCharge)
-                            .addComponent(lblWorkingHours))
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtWorkingHours)
-                            .addComponent(txtCharge)
-                            .addComponent(txtContactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(lblName)
+                    .addComponent(lblNannyID)
+                    .addComponent(lblBirthday)
+                    .addComponent(lblAddress))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(txtNannyID, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(txtBirthday, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblContacNumber)
+                    .addComponent(lblCharge)
+                    .addComponent(lblWorkingHours))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtWorkingHours, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addComponent(txtCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addComponent(txtContactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(btnSave)
+                .addGap(18, 18, 18)
+                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,61 +229,58 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNannyID)
-                    .addComponent(txtNannyID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblContacNumber)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblName))
+                    .addComponent(txtNannyID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblContacNumber)
                     .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCharge)
-                            .addComponent(txtCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblBirthday))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblName)
+                    .addComponent(lblCharge)
+                    .addComponent(txtCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAddress)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblWorkingHours)
-                        .addComponent(txtWorkingHours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(46, 46, 46)
+                        .addComponent(lblBirthday)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblAddress))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblWorkingHours)
+                                .addComponent(txtWorkingHours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave)
                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 48));
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Edit Nanny");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setText("Sua thong tin bao mau");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(111, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(103, 103, 103))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -269,7 +288,7 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-702)/2, (screenSize.height-412)/2, 702, 412);
+        setBounds((screenSize.width-643)/2, (screenSize.height-398)/2, 643, 398);
     }// </editor-fold>//GEN-END:initComponents
 
 private void txtWorkingHoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWorkingHoursActionPerformed

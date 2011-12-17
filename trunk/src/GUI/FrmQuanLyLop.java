@@ -63,9 +63,9 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblQLL.setFont(new java.awt.Font("Tahoma", 0, 24));
-        lblQLL.setForeground(new java.awt.Color(255, 0, 0));
-        lblQLL.setText("Quản Lý Lớp");
+        lblQLL.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblQLL.setForeground(new java.awt.Color(204, 0, 0));
+        lblQLL.setText("Quản lý Lớp");
 
         tblClass.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,37 +85,57 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblClass);
 
+        cboClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cboClass.setForeground(new java.awt.Color(0, 0, 204));
         cboClass.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ID", "Name", " " }));
 
-        btnEditClass.setText("Sua");
+        txtSearchClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtSearchClass.setForeground(new java.awt.Color(0, 0, 204));
+
+        btnEditClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnEditClass.setForeground(new java.awt.Color(0, 0, 204));
+        btnEditClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/comment.png"))); // NOI18N
+        btnEditClass.setText("Edit");
         btnEditClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditClassActionPerformed(evt);
             }
         });
 
-        btnDetailClass.setText("Chi tiet");
+        btnDetailClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnDetailClass.setForeground(new java.awt.Color(0, 0, 204));
+        btnDetailClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/full_page.png"))); // NOI18N
+        btnDetailClass.setText("Detail");
         btnDetailClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDetailClassActionPerformed(evt);
             }
         });
 
-        btnAddActive.setText("Them hoat dong");
+        btnAddActive.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAddActive.setForeground(new java.awt.Color(0, 0, 204));
+        btnAddActive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add_page.png"))); // NOI18N
+        btnAddActive.setText("Add Active");
         btnAddActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActiveActionPerformed(evt);
             }
         });
 
-        btnSearchClass.setText("Tim");
+        btnSearchClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSearchClass.setForeground(new java.awt.Color(0, 0, 204));
+        btnSearchClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/search.png"))); // NOI18N
+        btnSearchClass.setText("Search");
         btnSearchClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchClassActionPerformed(evt);
             }
         });
 
-        btnAddClass.setText("Them");
+        btnAddClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAddClass.setForeground(new java.awt.Color(0, 0, 204));
+        btnAddClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add.png"))); // NOI18N
+        btnAddClass.setText("Add");
         btnAddClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddClassActionPerformed(evt);
@@ -128,55 +148,57 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(186, 186, 186)
-                            .addComponent(lblQLL))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(35, 35, 35)
-                            .addComponent(btnDetailClass)
-                            .addGap(26, 26, 26)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cboClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(48, 48, 48)
-                                    .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnEditClass)
-                                    .addGap(26, 26, 26)
-                                    .addComponent(btnAddClass)
-                                    .addGap(28, 28, 28)
-                                    .addComponent(btnSearchClass)
-                                    .addGap(107, 107, 107)
-                                    .addComponent(btnAddActive)))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(cboClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblQLL))
+                        .addGap(35, 35, 35)
+                        .addComponent(btnSearchClass)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(108, Short.MAX_VALUE)
+                .addComponent(btnDetailClass)
+                .addGap(28, 28, 28)
+                .addComponent(btnEditClass)
+                .addGap(27, 27, 27)
+                .addComponent(btnAddClass)
+                .addGap(18, 18, 18)
+                .addComponent(btnAddActive)
+                .addGap(98, 98, 98))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(lblQLL)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblQLL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnSearchClass))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDetailClass)
                     .addComponent(btnEditClass)
                     .addComponent(btnAddClass)
-                    .addComponent(btnSearchClass)
                     .addComponent(btnAddActive))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-585)/2, (screenSize.height-410)/2, 585, 410);
+        setBounds((screenSize.width-671)/2, (screenSize.height-370)/2, 671, 370);
     }// </editor-fold>//GEN-END:initComponents
 
 private void btnSearchClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchClassActionPerformed

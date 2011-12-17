@@ -114,32 +114,60 @@ public class FrmDetailNanny1 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(255, 255, 51)));
         jPanel1.setForeground(new java.awt.Color(255, 255, 51));
 
+        lblNannyID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblNannyID.setForeground(new java.awt.Color(0, 0, 204));
         lblNannyID.setText("Nanny ID :");
 
+        lblName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 204));
         lblName.setText("Name :");
 
+        lblBirthday.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblBirthday.setForeground(new java.awt.Color(0, 0, 204));
         lblBirthday.setText("Birthday :");
 
+        lblAddress.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblAddress.setForeground(new java.awt.Color(0, 0, 204));
         lblAddress.setText("Address:");
 
+        lblContactNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblContactNumber.setForeground(new java.awt.Color(0, 0, 204));
         lblContactNumber.setText("Contact Number:");
 
+        lblCharge.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCharge.setForeground(new java.awt.Color(0, 0, 204));
         lblCharge.setText("Charge :");
 
+        lblWorkingHours.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblWorkingHours.setForeground(new java.awt.Color(0, 0, 204));
         lblWorkingHours.setText("Workinghours :");
 
+        lblClassofNanny.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblClassofNanny.setForeground(new java.awt.Color(0, 0, 204));
         lblClassofNanny.setText("Class of Nanny");
 
+        lbID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbID.setForeground(new java.awt.Color(0, 0, 204));
         lbID.setText("a");
 
+        lbName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbName.setForeground(new java.awt.Color(0, 0, 204));
         lbName.setText("b");
 
+        lbAddress.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbAddress.setForeground(new java.awt.Color(0, 0, 204));
         lbAddress.setText("c");
 
+        lbPhone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbPhone.setForeground(new java.awt.Color(0, 0, 204));
         lbPhone.setText("d");
 
+        lbCharge.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbCharge.setForeground(new java.awt.Color(0, 0, 204));
         lbCharge.setText("e");
 
+        lbworkinghours.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbworkinghours.setForeground(new java.awt.Color(0, 0, 204));
         lbworkinghours.setText("f");
 
         Listclass.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -155,27 +183,34 @@ public class FrmDetailNanny1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNannyID)
-                    .addComponent(lblName)
-                    .addComponent(lblBirthday)
-                    .addComponent(lblAddress)
-                    .addComponent(lblContactNumber)
-                    .addComponent(lblCharge)
-                    .addComponent(lblWorkingHours)
-                    .addComponent(lblClassofNanny))
-                .addGap(52, 52, 52)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(lbCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(lbworkinghours, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblClassofNanny)
+                        .addGap(69, 69, 69)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblWorkingHours)
+                        .addGap(63, 63, 63)
+                        .addComponent(lbworkinghours, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblCharge)
+                        .addGap(106, 106, 106)
+                        .addComponent(lbCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                            .addComponent(lbAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                            .addComponent(lbPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
-                        .addGap(96, 96, 96))
-                    .addComponent(lbBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblNannyID)
+                            .addComponent(lblName)
+                            .addComponent(lblBirthday)
+                            .addComponent(lblAddress)
+                            .addComponent(lblContactNumber))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(lbAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(lbBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                .addGap(96, 96, 96)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -189,37 +224,43 @@ public class FrmDetailNanny1 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
                     .addComponent(lbName))
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblBirthday)
                     .addComponent(lbBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAddress)
                     .addComponent(lbAddress))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblContactNumber)
                     .addComponent(lbPhone))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCharge)
-                    .addComponent(lbCharge))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbCharge)
+                    .addComponent(lblCharge))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblWorkingHours, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbworkinghours))
-                .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblClassofNanny))
-                .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(lblClassofNanny))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21))
         );
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 30));
-        jLabel1.setText("View information Nanny");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setText("Thong tin chi tiet bao mau");
 
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnClose.setForeground(new java.awt.Color(0, 0, 204));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
@@ -232,26 +273,29 @@ public class FrmDetailNanny1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(btnClose)
-                .addContainerGap(184, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(btnClose)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnClose)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-425)/2, (screenSize.height-574)/2, 425, 574);
+        setBounds((screenSize.width-425)/2, (screenSize.height-518)/2, 425, 518);
     }// </editor-fold>//GEN-END:initComponents
 
 private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
