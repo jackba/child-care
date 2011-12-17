@@ -126,40 +126,50 @@ public class FrmDetailClass extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 30));
-        jLabel1.setText("View information Class");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setText("Thong tin chi tiet lop");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lblClassID.setFont(new java.awt.Font("Tahoma", 1, 14));
+        lblClassID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblClassID.setForeground(new java.awt.Color(0, 0, 204));
         lblClassID.setText("Class ID :");
 
-        lblClassName.setFont(new java.awt.Font("Tahoma", 1, 14));
+        lblClassName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblClassName.setForeground(new java.awt.Color(0, 0, 204));
         lblClassName.setText("ClassName :");
 
-        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 1, 14));
+        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblAgeGroupID.setForeground(new java.awt.Color(0, 0, 204));
         lblAgeGroupID.setText("AgeGroup ID:");
 
-        lblTotalChild.setFont(new java.awt.Font("Tahoma", 1, 14));
+        lblTotalChild.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblTotalChild.setForeground(new java.awt.Color(0, 0, 204));
         lblTotalChild.setText("TotalChild :");
 
         lbID.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lbID.setForeground(new java.awt.Color(0, 0, 204));
         lbID.setText("a");
 
         lbName.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lbName.setForeground(new java.awt.Color(0, 0, 204));
         lbName.setText("b");
 
         lbAge.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lbAge.setForeground(new java.awt.Color(0, 0, 204));
         lbAge.setText("c");
 
-        lbtotalchild.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lbtotalchild.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbtotalchild.setForeground(new java.awt.Color(0, 0, 204));
         lbtotalchild.setText("d");
 
         ListActive.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(ListActive);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 204));
         jLabel8.setText("List Active :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -167,20 +177,29 @@ public class FrmDetailClass extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblClassName)
-                    .addComponent(lblClassID)
-                    .addComponent(lblAgeGroupID)
-                    .addComponent(lblTotalChild)
-                    .addComponent(jLabel8))
-                .addGap(80, 80, 80)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                    .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                    .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                    .addComponent(lbAge, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                    .addComponent(lbtotalchild, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblClassName)
+                            .addComponent(lblClassID)
+                            .addComponent(lblAgeGroupID))
+                        .addGap(80, 80, 80)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(lbAge, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTotalChild)
+                            .addComponent(jLabel8))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(lbtotalchild, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -198,17 +217,19 @@ public class FrmDetailClass extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAgeGroupID)
                     .addComponent(lbAge))
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTotalChild)
-                    .addComponent(lbtotalchild))
+                    .addComponent(lbtotalchild)
+                    .addComponent(lblTotalChild))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(jLabel8))
-                .addGap(34, 34, 34))
+                    .addComponent(jLabel8)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnClose.setForeground(new java.awt.Color(0, 0, 204));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
@@ -224,15 +245,15 @@ public class FrmDetailClass extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(60, 60, 60)
                         .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(133, 133, 133)
                         .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,9 +262,9 @@ public class FrmDetailClass extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
