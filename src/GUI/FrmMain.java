@@ -24,15 +24,15 @@ public class FrmMain extends javax.swing.JFrame {
              this.username = username;
         this.password = password;
         initComponents();
-            this.lblOnline.setText(username + " dang online!");
+            this.lblOnline.setText(username + " is online!");
     }
     public void logOff() {
         menuQuanLyTaiKhoan.setEnabled(false);
-        menuChild.setEnabled(false);
-        menuClass.setEnabled(false);
-        menuNanny.setEnabled(false);
-        menuAction.setEnabled(false);
-        menuAge.setEnabled(false);
+        Funcition.setEnabled(false);
+        Class.setEnabled(false);
+        Nanny.setEnabled(false);
+        Activity.setEnabled(false);
+        Age.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
@@ -44,27 +44,65 @@ public class FrmMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuBar5 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         lblWallpaper = new javax.swing.JLabel();
         lblOnline = new javax.swing.JLabel();
         lblPiconline = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuUser = new javax.swing.JMenu();
         menuQuanLyTaiKhoan = new javax.swing.JMenuItem();
         menuDangNhap = new javax.swing.JMenuItem();
         menuDangXuat = new javax.swing.JMenuItem();
         menuThoat = new javax.swing.JMenuItem();
-        menuChild = new javax.swing.JMenu();
-        menuitemAddchild = new javax.swing.JMenuItem();
-        menuNanny = new javax.swing.JMenu();
-        menuitemQuanLyBaoMau = new javax.swing.JMenuItem();
-        menuClass = new javax.swing.JMenu();
-        menuitemClass = new javax.swing.JMenuItem();
-        menuAge = new javax.swing.JMenu();
-        menuitemAge = new javax.swing.JMenuItem();
-        menuAction = new javax.swing.JMenu();
+        Funcition = new javax.swing.JMenu();
+        Child = new javax.swing.JMenuItem();
+        Nanny = new javax.swing.JMenuItem();
+        Class = new javax.swing.JMenuItem();
+        Age = new javax.swing.JMenuItem();
+        Activity = new javax.swing.JMenuItem();
+        Help = new javax.swing.JMenu();
+        Guide = new javax.swing.JMenuItem();
+        Introduce = new javax.swing.JMenuItem();
+
+        jMenu1.setText("File");
+        jMenuBar2.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar2.add(jMenu2);
+
+        jMenu3.setText("File");
+        jMenuBar3.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar3.add(jMenu4);
+
+        jMenu5.setText("File");
+        jMenuBar4.add(jMenu5);
+
+        jMenu6.setText("Edit");
+        jMenuBar4.add(jMenu6);
+
+        jMenu7.setText("File");
+        jMenuBar5.add(jMenu7);
+
+        jMenu8.setText("Edit");
+        jMenuBar5.add(jMenu8);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ChildCare System");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -73,40 +111,53 @@ public class FrmMain extends javax.swing.JFrame {
 
         lblPiconline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/online.jpg"))); // NOI18N
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\anh do an\\3.jpg")); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPiconline, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
+                        .addGap(244, 244, 244)
                         .addComponent(lblWallpaper))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPiconline, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblOnline, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addGap(63, 63, 63))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblWallpaper)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblPiconline)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblOnline, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblWallpaper)
+                        .addGap(12, 12, 12)
+                        .addComponent(lblPiconline))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(lblOnline, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        menuUser.setText("Quản Lý Người Dùng");
+        menuUser.setForeground(new java.awt.Color(0, 0, 204));
+        menuUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/system.jpg"))); // NOI18N
+        menuUser.setText("System");
 
-        menuQuanLyTaiKhoan.setText("Quản lý tài khoản");
+        menuQuanLyTaiKhoan.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        menuQuanLyTaiKhoan.setForeground(new java.awt.Color(0, 0, 204));
+        menuQuanLyTaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/users.png"))); // NOI18N
+        menuQuanLyTaiKhoan.setText("Mangager User");
         menuQuanLyTaiKhoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuQuanLyTaiKhoanActionPerformed(evt);
@@ -114,7 +165,10 @@ public class FrmMain extends javax.swing.JFrame {
         });
         menuUser.add(menuQuanLyTaiKhoan);
 
-        menuDangNhap.setText("Đăng Nhập");
+        menuDangNhap.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        menuDangNhap.setForeground(new java.awt.Color(0, 0, 204));
+        menuDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/unlock1.png"))); // NOI18N
+        menuDangNhap.setText("Login");
         menuDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuDangNhapActionPerformed(evt);
@@ -122,7 +176,10 @@ public class FrmMain extends javax.swing.JFrame {
         });
         menuUser.add(menuDangNhap);
 
-        menuDangXuat.setText("Đăng Xuất");
+        menuDangXuat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        menuDangXuat.setForeground(new java.awt.Color(0, 0, 204));
+        menuDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/lock.png"))); // NOI18N
+        menuDangXuat.setText("Logout");
         menuDangXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuDangXuatActionPerformed(evt);
@@ -130,7 +187,10 @@ public class FrmMain extends javax.swing.JFrame {
         });
         menuUser.add(menuDangXuat);
 
-        menuThoat.setText("Thoát");
+        menuThoat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        menuThoat.setForeground(new java.awt.Color(0, 0, 204));
+        menuThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
+        menuThoat.setText("Exit");
         menuThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuThoatActionPerformed(evt);
@@ -140,56 +200,79 @@ public class FrmMain extends javax.swing.JFrame {
 
         jMenuBar1.add(menuUser);
 
-        menuChild.setText("Quản Lý Trẻ");
+        Funcition.setForeground(new java.awt.Color(0, 0, 204));
+        Funcition.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Computer.png"))); // NOI18N
+        Funcition.setText("Functions");
 
-        menuitemAddchild.setText("Quản lý Trẻ");
-        menuitemAddchild.addActionListener(new java.awt.event.ActionListener() {
+        Child.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        Child.setForeground(new java.awt.Color(0, 0, 204));
+        Child.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/logo.png"))); // NOI18N
+        Child.setText("Mangager Child");
+        Child.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuitemAddchildActionPerformed(evt);
+                ChildActionPerformed(evt);
             }
         });
-        menuChild.add(menuitemAddchild);
+        Funcition.add(Child);
 
-        jMenuBar1.add(menuChild);
-
-        menuNanny.setText("Quản Lý Bảo Mẫu");
-
-        menuitemQuanLyBaoMau.setText("Quản Lý Bảo Mẫu");
-        menuitemQuanLyBaoMau.addActionListener(new java.awt.event.ActionListener() {
+        Nanny.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
+        Nanny.setForeground(new java.awt.Color(0, 0, 204));
+        Nanny.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/User.png"))); // NOI18N
+        Nanny.setText("Manager Nanny");
+        Nanny.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuitemQuanLyBaoMauActionPerformed(evt);
+                NannyActionPerformed(evt);
             }
         });
-        menuNanny.add(menuitemQuanLyBaoMau);
+        Funcition.add(Nanny);
 
-        jMenuBar1.add(menuNanny);
-
-        menuClass.setText("Quản Lý Lớp");
-
-        menuitemClass.setText("Quản Lý Lớp");
-        menuitemClass.addActionListener(new java.awt.event.ActionListener() {
+        Class.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
+        Class.setForeground(new java.awt.Color(0, 0, 204));
+        Class.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Class.png"))); // NOI18N
+        Class.setText("Manager Class");
+        Class.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuitemClassActionPerformed(evt);
+                ClassActionPerformed(evt);
             }
         });
-        menuClass.add(menuitemClass);
+        Funcition.add(Class);
 
-        jMenuBar1.add(menuClass);
-
-        menuAge.setText("Quản Lý Độ Tuổi");
-
-        menuitemAge.setText("Quản lý độ tuổi");
-        menuitemAge.addActionListener(new java.awt.event.ActionListener() {
+        Age.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
+        Age.setForeground(new java.awt.Color(0, 0, 204));
+        Age.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/chart.png"))); // NOI18N
+        Age.setText("Manager Age Group");
+        Age.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuitemAgeActionPerformed(evt);
+                AgeActionPerformed(evt);
             }
         });
-        menuAge.add(menuitemAge);
+        Funcition.add(Age);
 
-        jMenuBar1.add(menuAge);
+        Activity.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
+        Activity.setForeground(new java.awt.Color(0, 0, 204));
+        Activity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Gamepad.png"))); // NOI18N
+        Activity.setText("Manager Active");
+        Funcition.add(Activity);
 
-        menuAction.setText("Quản Lý Hoạt Động");
-        jMenuBar1.add(menuAction);
+        jMenuBar1.add(Funcition);
+
+        Help.setForeground(new java.awt.Color(0, 0, 204));
+        Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/help.png"))); // NOI18N
+        Help.setText("Help");
+
+        Guide.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        Guide.setForeground(new java.awt.Color(0, 0, 204));
+        Guide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/rss.png"))); // NOI18N
+        Guide.setText("Guide");
+        Help.add(Guide);
+
+        Introduce.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        Introduce.setForeground(new java.awt.Color(0, 0, 204));
+        Introduce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/info.png"))); // NOI18N
+        Introduce.setText("About");
+        Help.add(Introduce);
+
+        jMenuBar1.add(Help);
 
         setJMenuBar(jMenuBar1);
 
@@ -197,20 +280,15 @@ public class FrmMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-612)/2, (screenSize.height-461)/2, 612, 461);
+        setBounds((screenSize.width-403)/2, (screenSize.height-407)/2, 403, 407);
     }// </editor-fold>//GEN-END:initComponents
 
 private void menuQuanLyTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuQuanLyTaiKhoanActionPerformed
@@ -242,29 +320,29 @@ private void menuDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         login.setVisible(true);
 }//GEN-LAST:event_menuDangNhapActionPerformed
 
-private void menuitemAddchildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemAddchildActionPerformed
-// TODO add your handling code here:
-            FrmQuanLyTre frmquanlytre = new FrmQuanLyTre();
-        frmquanlytre.setVisible(true);
-}//GEN-LAST:event_menuitemAddchildActionPerformed
-
-private void menuitemQuanLyBaoMauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemQuanLyBaoMauActionPerformed
-// TODO add your handling code here:
-        FrmQuanLyBaoMau1 frmquanlybaomau = new FrmQuanLyBaoMau1();
-    frmquanlybaomau.setVisible(true);
-}//GEN-LAST:event_menuitemQuanLyBaoMauActionPerformed
-
-private void menuitemClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemClassActionPerformed
-// TODO add your handling code here:
-            FrmQuanLyLop frmquanlylop = new FrmQuanLyLop();
-    frmquanlylop.setVisible(true);
-}//GEN-LAST:event_menuitemClassActionPerformed
-
-private void menuitemAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemAgeActionPerformed
+private void AgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgeActionPerformed
 // TODO add your handling code here:
     FrmQuanLyTuoi frmquanlytuoi = new FrmQuanLyTuoi();
     frmquanlytuoi.setVisible(true);
-}//GEN-LAST:event_menuitemAgeActionPerformed
+}//GEN-LAST:event_AgeActionPerformed
+
+private void ClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClassActionPerformed
+// TODO add your handling code here:
+            FrmQuanLyLop frmquanlylop = new FrmQuanLyLop();
+    frmquanlylop.setVisible(true);
+}//GEN-LAST:event_ClassActionPerformed
+
+private void NannyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NannyActionPerformed
+// TODO add your handling code here:
+        FrmQuanLyBaoMau1 frmquanlybaomau = new FrmQuanLyBaoMau1();
+    frmquanlybaomau.setVisible(true);
+}//GEN-LAST:event_NannyActionPerformed
+
+private void ChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChildActionPerformed
+// TODO add your handling code here:
+            FrmQuanLyTre frmquanlytre = new FrmQuanLyTre();
+        frmquanlytre.setVisible(true);
+}//GEN-LAST:event_ChildActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,24 +380,37 @@ private void menuitemAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Activity;
+    private javax.swing.JMenuItem Age;
+    private javax.swing.JMenuItem Child;
+    private javax.swing.JMenuItem Class;
+    private javax.swing.JMenu Funcition;
+    private javax.swing.JMenuItem Guide;
+    private javax.swing.JMenu Help;
+    private javax.swing.JMenuItem Introduce;
+    private javax.swing.JMenuItem Nanny;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblOnline;
     private javax.swing.JLabel lblPiconline;
     private javax.swing.JLabel lblWallpaper;
-    private javax.swing.JMenu menuAction;
-    private javax.swing.JMenu menuAge;
-    private javax.swing.JMenu menuChild;
-    private javax.swing.JMenu menuClass;
     private javax.swing.JMenuItem menuDangNhap;
     private javax.swing.JMenuItem menuDangXuat;
-    private javax.swing.JMenu menuNanny;
     private javax.swing.JMenuItem menuQuanLyTaiKhoan;
     private javax.swing.JMenuItem menuThoat;
     private javax.swing.JMenu menuUser;
-    private javax.swing.JMenuItem menuitemAddchild;
-    private javax.swing.JMenuItem menuitemAge;
-    private javax.swing.JMenuItem menuitemClass;
-    private javax.swing.JMenuItem menuitemQuanLyBaoMau;
     // End of variables declaration//GEN-END:variables
 }

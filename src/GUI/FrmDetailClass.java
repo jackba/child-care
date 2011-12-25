@@ -126,26 +126,26 @@ public class FrmDetailClass extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Thong tin chi tiet lop");
+        jLabel1.setText("Detail Class");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lblClassID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblClassID.setFont(new java.awt.Font("Tahoma", 0, 14));
         lblClassID.setForeground(new java.awt.Color(0, 0, 204));
         lblClassID.setText("Class ID :");
 
-        lblClassName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblClassName.setFont(new java.awt.Font("Tahoma", 0, 14));
         lblClassName.setForeground(new java.awt.Color(0, 0, 204));
         lblClassName.setText("ClassName :");
 
-        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 14));
         lblAgeGroupID.setForeground(new java.awt.Color(0, 0, 204));
         lblAgeGroupID.setText("AgeGroup ID:");
 
-        lblTotalChild.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblTotalChild.setFont(new java.awt.Font("Tahoma", 0, 14));
         lblTotalChild.setForeground(new java.awt.Color(0, 0, 204));
         lblTotalChild.setText("TotalChild :");
 
@@ -161,14 +161,14 @@ public class FrmDetailClass extends javax.swing.JFrame {
         lbAge.setForeground(new java.awt.Color(0, 0, 204));
         lbAge.setText("c");
 
-        lbtotalchild.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbtotalchild.setFont(new java.awt.Font("Tahoma", 0, 14));
         lbtotalchild.setForeground(new java.awt.Color(0, 0, 204));
         lbtotalchild.setText("d");
 
         ListActive.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(ListActive);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14));
         jLabel8.setForeground(new java.awt.Color(0, 0, 204));
         jLabel8.setText("List Active :");
 
@@ -228,7 +228,7 @@ public class FrmDetailClass extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnClose.setForeground(new java.awt.Color(0, 0, 204));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
@@ -245,15 +245,16 @@ public class FrmDetailClass extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(133, 133, 133)
                         .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(132, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

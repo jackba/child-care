@@ -60,12 +60,13 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
         btnAddActive = new javax.swing.JButton();
         btnSearchClass = new javax.swing.JButton();
         btnAddClass = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblQLL.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblQLL.setFont(new java.awt.Font("Tahoma", 1, 36));
         lblQLL.setForeground(new java.awt.Color(204, 0, 0));
-        lblQLL.setText("Quản lý Lớp");
+        lblQLL.setText("Manager Class");
 
         tblClass.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,14 +86,14 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblClass);
 
-        cboClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cboClass.setFont(new java.awt.Font("Tahoma", 0, 12));
         cboClass.setForeground(new java.awt.Color(0, 0, 204));
         cboClass.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ID", "Name", " " }));
 
-        txtSearchClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtSearchClass.setFont(new java.awt.Font("Tahoma", 0, 12));
         txtSearchClass.setForeground(new java.awt.Color(0, 0, 204));
 
-        btnEditClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnEditClass.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnEditClass.setForeground(new java.awt.Color(0, 0, 204));
         btnEditClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/comment.png"))); // NOI18N
         btnEditClass.setText("Edit");
@@ -102,7 +103,7 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
             }
         });
 
-        btnDetailClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnDetailClass.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnDetailClass.setForeground(new java.awt.Color(0, 0, 204));
         btnDetailClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/full_page.png"))); // NOI18N
         btnDetailClass.setText("Detail");
@@ -112,7 +113,7 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
             }
         });
 
-        btnAddActive.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAddActive.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnAddActive.setForeground(new java.awt.Color(0, 0, 204));
         btnAddActive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add_page.png"))); // NOI18N
         btnAddActive.setText("Add Active");
@@ -122,7 +123,7 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
             }
         });
 
-        btnSearchClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSearchClass.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnSearchClass.setForeground(new java.awt.Color(0, 0, 204));
         btnSearchClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/search.png"))); // NOI18N
         btnSearchClass.setText("Search");
@@ -132,7 +133,7 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
             }
         });
 
-        btnAddClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAddClass.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnAddClass.setForeground(new java.awt.Color(0, 0, 204));
         btnAddClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add.png"))); // NOI18N
         btnAddClass.setText("Add");
@@ -141,6 +142,8 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
                 btnAddClassActionPerformed(evt);
             }
         });
+
+        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,14 +156,15 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
-                        .addComponent(cboClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblQLL))
-                        .addGap(35, 35, 35)
+                                .addComponent(cboClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblQLL, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(btnSearchClass)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -194,11 +198,11 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
                     .addComponent(btnEditClass)
                     .addComponent(btnAddClass)
                     .addComponent(btnAddActive))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-671)/2, (screenSize.height-370)/2, 671, 370);
+        setBounds((screenSize.width-671)/2, (screenSize.height-392)/2, 671, 392);
     }// </editor-fold>//GEN-END:initComponents
 
 private void btnSearchClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchClassActionPerformed
@@ -363,6 +367,7 @@ private void btnAddActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JButton btnEditClass;
     private javax.swing.JButton btnSearchClass;
     private javax.swing.JComboBox cboClass;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblQLL;
     private javax.swing.JTable tblClass;

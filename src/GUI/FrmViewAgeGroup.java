@@ -56,7 +56,7 @@ public static String idage;
 
         lblViewAgeGroup.setFont(new java.awt.Font("Tahoma", 1, 36));
         lblViewAgeGroup.setForeground(new java.awt.Color(204, 0, 0));
-        lblViewAgeGroup.setText("Them do tuoi ");
+        lblViewAgeGroup.setText("Add Age Group ");
 
         tblAgeGroup.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -62,11 +62,11 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        cboSelect.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cboSelect.setFont(new java.awt.Font("Tahoma", 0, 12));
         cboSelect.setForeground(new java.awt.Color(0, 0, 204));
         cboSelect.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ID", "Name" }));
 
-        btnDetail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnDetail.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnDetail.setForeground(new java.awt.Color(0, 0, 204));
         btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/full_page.png"))); // NOI18N
         btnDetail.setText("Detail");
@@ -76,7 +76,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
             }
         });
 
-        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnAdd.setForeground(new java.awt.Color(0, 0, 204));
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add.png"))); // NOI18N
         btnAdd.setText("Add");
@@ -86,7 +86,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
             }
         });
 
-        btnEdit.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnEdit.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnEdit.setForeground(new java.awt.Color(0, 0, 204));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/comment.png"))); // NOI18N
         btnEdit.setText("Edit");
@@ -96,7 +96,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnSearch.setForeground(new java.awt.Color(0, 0, 204));
         btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/search.png"))); // NOI18N
         btnSearch.setText("Search");
@@ -107,7 +107,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
             }
         });
 
-        btnAddClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAddClass.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnAddClass.setForeground(new java.awt.Color(0, 0, 204));
         btnAddClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add_page.png"))); // NOI18N
         btnAddClass.setText("Add Class");
@@ -118,7 +118,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
             }
         });
 
-        txtSearch.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtSearch.setFont(new java.awt.Font("Tahoma", 0, 12));
         txtSearch.setForeground(new java.awt.Color(0, 0, 204));
 
         jTableQLBM.setModel(new javax.swing.table.DefaultTableModel(
@@ -139,9 +139,9 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableQLBM);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Quản lý bảo mẫu");
+        jLabel1.setText("Manager Nanny");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,7 +167,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
                 .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(162, 162, 162))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(249, Short.MAX_VALUE)
+                .addContainerGap(269, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(240, 240, 240))
         );
@@ -347,6 +347,7 @@ private void btnAddClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
                 new FrmQuanLyBaoMau1().setVisible(true);
             }

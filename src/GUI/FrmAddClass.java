@@ -65,13 +65,13 @@ public class FrmAddClass extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        txtClassName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtClassName.setFont(new java.awt.Font("Tahoma", 0, 12));
         txtClassName.setForeground(new java.awt.Color(0, 0, 204));
 
-        txtAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 12));
         txtAgeGroupID.setForeground(new java.awt.Color(0, 0, 204));
 
-        txtClassID.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtClassID.setFont(new java.awt.Font("Tahoma", 0, 12));
         txtClassID.setForeground(new java.awt.Color(0, 0, 204));
         txtClassID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,19 +79,19 @@ public class FrmAddClass extends javax.swing.JFrame {
             }
         });
 
-        lblClassName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblClassName.setFont(new java.awt.Font("Tahoma", 0, 12));
         lblClassName.setForeground(new java.awt.Color(0, 0, 204));
         lblClassName.setText("ClassName");
 
-        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 12));
         lblAgeGroupID.setForeground(new java.awt.Color(0, 0, 204));
         lblAgeGroupID.setText("AgeGroupID");
 
-        lblClassId.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblClassId.setFont(new java.awt.Font("Tahoma", 0, 12));
         lblClassId.setForeground(new java.awt.Color(0, 0, 204));
         lblClassId.setText("ClassID");
 
-        btnGet.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnGet.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnGet.setForeground(new java.awt.Color(0, 0, 204));
         btnGet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/download.png"))); // NOI18N
         btnGet.setText("Get");
@@ -118,7 +118,7 @@ public class FrmAddClass extends javax.swing.JFrame {
                         .addComponent(txtClassID, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
                     .addComponent(txtAgeGroupID, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(btnGet, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                .addComponent(btnGet, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addGap(76, 76, 76))
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,7 +140,7 @@ public class FrmAddClass extends javax.swing.JFrame {
                 .addGap(85, 85, 85))
         );
 
-        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnAdd.setForeground(new java.awt.Color(0, 0, 204));
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add.png"))); // NOI18N
         btnAdd.setText("Add");
@@ -150,13 +150,13 @@ public class FrmAddClass extends javax.swing.JFrame {
             }
         });
 
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnCancel.setForeground(new java.awt.Color(0, 0, 204));
         btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reset.png"))); // NOI18N
         btnCancel.setText("Reset");
         btnCancel.setPreferredSize(new java.awt.Dimension(89, 31));
 
-        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnClose.setForeground(new java.awt.Color(0, 0, 204));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
@@ -167,9 +167,9 @@ public class FrmAddClass extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Them lop");
+        jLabel1.setText("Add Class");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

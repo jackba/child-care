@@ -97,7 +97,7 @@
                       <Component id="txtAgeGroupID" min="-2" pref="132" max="-2" attributes="1"/>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="btnGet" pref="175" max="32767" attributes="0"/>
+                  <Component id="btnGet" pref="169" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -274,7 +274,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="cc" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Them lop"/>
+        <Property name="text" type="java.lang.String" value="Add Class"/>
       </Properties>
     </Component>
   </SubComponents>

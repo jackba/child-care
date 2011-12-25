@@ -25,24 +25,25 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="42" max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="329" max="-2" attributes="1"/>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-          </Group>
           <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
               <Component id="btnClose" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="180" max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="170" max="-2" attributes="1"/>
+              <EmptySpace pref="125" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="47" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="357" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnClose" min="-2" max="-2" attributes="0"/>
@@ -78,17 +79,17 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lblClassofNanny" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" pref="200" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="176" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lblWorkingHours" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                          <Component id="lbworkinghours" pref="200" max="32767" attributes="0"/>
+                          <Component id="lbworkinghours" pref="176" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lblCharge" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                          <Component id="lbCharge" pref="200" max="32767" attributes="0"/>
+                          <Component id="lbCharge" pref="176" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -100,12 +101,12 @@
                           </Group>
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbPhone" alignment="0" pref="200" max="32767" attributes="0"/>
-                              <Component id="lbAddress" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="lbPhone" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="lbAddress" alignment="0" pref="176" max="32767" attributes="0"/>
                               <Component id="lbBirthday" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-                              <Component id="lbID" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="lbID" alignment="0" pref="176" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lbName" pref="104" max="32767" attributes="0"/>
+                                  <Component id="lbName" pref="80" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -361,7 +362,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="cc" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Thong tin chi tiet bao mau"/>
+        <Property name="text" type="java.lang.String" value="Detail Nanny"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnClose">
