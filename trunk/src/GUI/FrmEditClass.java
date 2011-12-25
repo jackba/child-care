@@ -93,22 +93,22 @@ public class FrmEditClass extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        txtClassName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtClassName.setFont(new java.awt.Font("Tahoma", 0, 12));
         txtClassName.setForeground(new java.awt.Color(0, 0, 204));
 
-        txtAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtAgeGroupID.setFont(new java.awt.Font("Tahoma", 0, 12));
         txtAgeGroupID.setForeground(new java.awt.Color(0, 0, 204));
         txtAgeGroupID.setEnabled(false);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel2.setForeground(new java.awt.Color(0, 0, 204));
         jLabel2.setText("ClassName");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel3.setForeground(new java.awt.Color(0, 0, 204));
         jLabel3.setText("AgeGroupID");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel5.setForeground(new java.awt.Color(0, 0, 204));
         jLabel5.setText("Note");
 
@@ -124,9 +124,9 @@ public class FrmEditClass extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(86, 86, 86)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNote, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-                    .addComponent(txtClassName, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-                    .addComponent(txtAgeGroupID, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))
+                    .addComponent(txtNote, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                    .addComponent(txtClassName, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                    .addComponent(txtAgeGroupID, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -147,11 +147,11 @@ public class FrmEditClass extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Sua thong tin lop");
+        jLabel1.setText("Edit Class");
 
-        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnSave.setForeground(new java.awt.Color(0, 0, 204));
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/save1.png"))); // NOI18N
         btnSave.setText("Save");
@@ -161,13 +161,13 @@ public class FrmEditClass extends javax.swing.JFrame {
             }
         });
 
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnCancel.setForeground(new java.awt.Color(0, 0, 204));
         btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reset.png"))); // NOI18N
         btnCancel.setText("Reset");
         btnCancel.setPreferredSize(new java.awt.Dimension(89, 31));
 
-        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnClose.setForeground(new java.awt.Color(0, 0, 204));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
@@ -184,9 +184,6 @@ public class FrmEditClass extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel1))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
@@ -196,6 +193,10 @@ public class FrmEditClass extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(154, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(117, 117, 117))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

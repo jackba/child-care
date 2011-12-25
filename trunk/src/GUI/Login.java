@@ -251,7 +251,7 @@ private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                         this.dispose(); //dong form dang nhap
                         m = new FrmMain(username, password);
                         m.setVisible(true);
-                        m.logOff();
+                       // m.logOff();
                     }
                 } else {
                     JOptionPane.showMessageDialog(this, "Tên hoặc mật khẩu sai!");

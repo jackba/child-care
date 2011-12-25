@@ -68,7 +68,7 @@ public class FrmAddNanny1 extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnSave.setForeground(new java.awt.Color(0, 0, 204));
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/save1.png"))); // NOI18N
         btnSave.setText("Save");
@@ -78,7 +78,7 @@ public class FrmAddNanny1 extends javax.swing.JFrame {
             }
         });
 
-        btnReset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnReset.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnReset.setForeground(new java.awt.Color(0, 0, 204));
         btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reset.png"))); // NOI18N
         btnReset.setText("Reset");
@@ -89,7 +89,7 @@ public class FrmAddNanny1 extends javax.swing.JFrame {
             }
         });
 
-        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/close2.png"))); // NOI18N
         btnClose.setText("Close");
         btnClose.setPreferredSize(new java.awt.Dimension(87, 31));
@@ -115,15 +115,15 @@ public class FrmAddNanny1 extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel7.setForeground(new java.awt.Color(0, 0, 204));
         jLabel7.setText("Contact Number");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel9.setForeground(new java.awt.Color(0, 0, 204));
         jLabel9.setText("Charge");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel10.setForeground(new java.awt.Color(0, 0, 204));
         jLabel10.setText("WorkingHours");
 
@@ -131,23 +131,23 @@ public class FrmAddNanny1 extends javax.swing.JFrame {
 
         txtNannyID.setForeground(new java.awt.Color(0, 0, 204));
 
-        lblNannyID.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblNannyID.setFont(new java.awt.Font("Tahoma", 0, 12));
         lblNannyID.setForeground(new java.awt.Color(0, 0, 204));
         lblNannyID.setText("NannyID");
 
-        lblName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblName.setFont(new java.awt.Font("Tahoma", 0, 12));
         lblName.setForeground(new java.awt.Color(0, 0, 204));
         lblName.setText("Name");
 
         txtName.setForeground(new java.awt.Color(0, 0, 204));
 
-        lblBirthDay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblBirthDay.setFont(new java.awt.Font("Tahoma", 0, 12));
         lblBirthDay.setForeground(new java.awt.Color(0, 0, 204));
         lblBirthDay.setText("Birthday");
 
         txtAddress.setForeground(new java.awt.Color(0, 0, 204));
 
-        lblAddress.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Tahoma", 0, 12));
         lblAddress.setForeground(new java.awt.Color(0, 0, 204));
         lblAddress.setText("Address");
 
@@ -253,16 +253,16 @@ public class FrmAddNanny1 extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Them bao mau");
+        jLabel1.setText("Add Nanny");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
+                .addContainerGap(178, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(180, 180, 180))
             .addGroup(layout.createSequentialGroup()
