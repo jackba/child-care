@@ -63,6 +63,7 @@ public class FrmQuanLyLop extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Manager Class");
 
         lblQLL.setFont(new java.awt.Font("Tahoma", 1, 36));
         lblQLL.setForeground(new java.awt.Color(204, 0, 0));
@@ -315,12 +316,19 @@ private void btnEditClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
 
 private void btnAddClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClassActionPerformed
 // TODO add your handling code here:
+
      FrmAddClass frmaddclass = new FrmAddClass();
     frmaddclass.setVisible(true);
 }//GEN-LAST:event_btnAddClassActionPerformed
 
 private void btnAddActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActiveActionPerformed
 // TODO add your handling code here:
+            int h = tblClass.getSelectedRow();
+    if (h == -1) {
+        JOptionPane.showMessageDialog(this, "Choose a Class to Add");
+        return;
+    }
+    ClassID = tblClass.getValueAt(tblClass.getSelectedRow(), 0).toString();
      FrmSelectActiveforClass frmclass = new FrmSelectActiveforClass();
     frmclass.setVisible(true);
 }//GEN-LAST:event_btnAddActiveActionPerformed

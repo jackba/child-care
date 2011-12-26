@@ -93,7 +93,7 @@ public class FrmDetailClass extends javax.swing.JFrame {
              rs = pstmt.executeQuery();
             while (rs.next()) {
                 String Id = rs.getString(1);
-                ((DefaultListModel) ListActive.getModel()).addElement("(ID:"+Id +")");
+                ((DefaultListModel) ListActive.getModel()).addElement("ID:"+Id +"");
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -125,6 +125,7 @@ public class FrmDetailClass extends javax.swing.JFrame {
         btnClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Detail Class");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));

@@ -10,6 +10,7 @@
  */
 package GUI;
 import DAO.Connect;
+import DatabaseAccess.Active;
 import DatabaseAccess.quanLyLop;
 import java.sql.Statement;
 import java.sql.Connection;
@@ -35,12 +36,14 @@ public class FrmSelectActiveforClass extends javax.swing.JFrame {
     ResultSet rs;
     quanLyLop nhap = new quanLyLop();
     Connect connect = new Connect();
+        public static String ActiveID;
+    public static String Rates;
     /** Creates new form FrmSelectActiveforClass */
     public FrmSelectActiveforClass() {
         initComponents();
                 model = (DefaultTableModel) tblActive.getModel();
         nhap.btnLoadClass(tblActive);
-        //new quanLyLop().inittableActive(tblActive);
+        new Active().inittableActive(tblActive);
      //   lbName.setText("Add Active for: "+FrmQuanLyLop.ClassID +"  :  "+ quanLyLop.g+":"+FrmQuanLyLop.AgegroupId);
     }
 
@@ -54,12 +57,8 @@ public class FrmSelectActiveforClass extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        lbName = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblActive = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        txtNote = new javax.swing.JTextField();
-        txtchoice = new javax.swing.JComboBox();
         txtSearchClass = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
@@ -67,10 +66,9 @@ public class FrmSelectActiveforClass extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 36));
-        jLabel1.setText("Select Active");
-
-        lbName.setText("Name:");
+        jLabel1.setFont(new java.awt.Font("VNI-Present", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setText("Add Active for Class");
 
         tblActive.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,11 +88,9 @@ public class FrmSelectActiveforClass extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblActive);
 
-        jLabel2.setText("Note");
+        txtSearchClass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        txtchoice.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ID", "Status" }));
-
-        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnSearch.setForeground(new java.awt.Color(0, 0, 204));
         btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/search.png"))); // NOI18N
         btnSearch.setText("Search");
@@ -105,7 +101,7 @@ public class FrmSelectActiveforClass extends javax.swing.JFrame {
             }
         });
 
-        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnClose.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnClose.setForeground(new java.awt.Color(0, 0, 204));
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/close2.png"))); // NOI18N
         btnClose.setText("Close");
@@ -116,7 +112,7 @@ public class FrmSelectActiveforClass extends javax.swing.JFrame {
             }
         });
 
-        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 12));
         btnAdd.setForeground(new java.awt.Color(0, 0, 204));
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add.png"))); // NOI18N
         btnAdd.setText("Add");
@@ -131,79 +127,57 @@ public class FrmSelectActiveforClass extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(422, Short.MAX_VALUE)
-                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(139, 139, 139))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(91, 91, 91)
-                            .addComponent(lbName, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(35, 35, 35)
-                            .addComponent(jLabel2)
-                            .addGap(42, 42, 42)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNote)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(txtchoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(194, 194, 194)))))
-                    .addContainerGap()))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(55, 55, 55)
+                                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(326, Short.MAX_VALUE)
-                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(lbName, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNote, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtSearchClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtchoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(75, 75, 75)))
+                .addGap(21, 21, 21))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-633)/2, (screenSize.height-466)/2, 633, 466);
+        setBounds((screenSize.width-395)/2, (screenSize.height-388)/2, 395, 388);
     }// </editor-fold>//GEN-END:initComponents
 
 private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        searchClass=true;
-        if (txtSearchClass.getText().length() == 0) {
-            JOptionPane.showMessageDialog(this, "Enter a key to Search!");
-            return;
-        }
-        if(txtchoice.getSelectedItem().equals("ID")){
+    model = (DefaultTableModel) tblActive.getModel();
+    if (txtSearchClass.getText().length() == 0) {
+        JOptionPane.showMessageDialog(this, "Enter a key to Search!");
+        return;
+    }
+    if (txtSearchClass.getText().equals("all")) {
+        nhap.btnLoadClass(tblActive);
+    }
         try {
 
             @SuppressWarnings(value = "static-access")
@@ -238,40 +212,8 @@ conn.close();
             JOptionPane.showMessageDialog(this,"Error:"+ex.getMessage());
             return;
         }
-        }else{
-            try {
-            @SuppressWarnings(value = "static-access")
-            String strSQL = "select * from tblActivities where Status like ?";
-            Vector vtCol = new Vector();
-           Vector vtDataSearchClass = new Vector();
-
-            pstmt = conn.prepareStatement(strSQL);
-            pstmt.setString(1, "%" + txtSearchClass.getText() + "%");
-            ResultSet rs = pstmt.executeQuery();
-            ResultSetMetaData rsmt = rs.getMetaData();
-            //Add data to vtCol:
-            for (int i = 1; i <= rsmt.getColumnCount(); i++) {
-                vtCol.add(rsmt.getColumnName(i));
-            }
-            //Add data to vtData:
-            while (rs.next()) {
-                Vector vtRow = new Vector();
-
-                for (int i = 1; i <= rsmt.getColumnCount(); i++) {
-                    vtRow.add(rs.getString(i));
-                }
-
-                vtDataSearchClass.add(vtRow);
-            }
-
-            tblActive.setModel(new DefaultTableModel(vtDataSearchClass, vtCol));
-conn.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this,"Error:"+ex.getMessage());
-            return;
-        }
-        }
+        
+        
 }//GEN-LAST:event_btnSearchActionPerformed
 
 private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
@@ -284,24 +226,18 @@ private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
             JOptionPane.showMessageDialog(this,"Choose a Active to Add");
             return;
         }
-        new (tblActive);
-        Vector temp = (Vector)InitTable.vtData.get(n);
+        new Active().inittableActive(tblActive);
+        Vector temp = (Vector)Active.vtData.get(n);
         ActiveID = (String) temp.get(0);
-        Rates=(String) temp.get(2);
-        if(!getActiveID(ActiveID)){
-            JOptionPane.showMessageDialog(this,"Activities not Active please choice other Activities");
-            return;
-        }
-        else{
-
+         conn=connect.getConnection();
         if(conn!=null){
             try {
+               
                 String strSql = "insert tblDetailsActiveClass values(?,?)";
                 pstmt = conn.prepareStatement(strSql);
                 pstmt.setString(1,ActiveID);
-                pstmt.setInt(2,Integer.parseInt(FrmQuanLyLop.ClassID));
-                pstmt.setFloat(3,Float.parseFloat(Rates));
-                pstmt.setString(4,txtNote.getText());
+                pstmt.setString(2,FrmQuanLyLop.ClassID);
+                //pstmt.setInt(2,Integer.parseInt(FrmQuanLyLop.ClassID));
                 pstmt.executeUpdate();
                 JOptionPane.showMessageDialog(this,"Insert successfully!");
                 this.dispose();
@@ -317,7 +253,7 @@ conn.close();
             return;
 
         }
-        }
+        
 }//GEN-LAST:event_btnAddActionPerformed
 
     /**
@@ -360,12 +296,8 @@ conn.close();
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lbName;
     private javax.swing.JTable tblActive;
-    private javax.swing.JTextField txtNote;
     private javax.swing.JTextField txtSearchClass;
-    private javax.swing.JComboBox txtchoice;
     // End of variables declaration//GEN-END:variables
 }

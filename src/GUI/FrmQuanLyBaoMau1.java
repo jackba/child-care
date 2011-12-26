@@ -9,6 +9,7 @@
  * Created on Nov 27, 2011, 11:30:12 PM
  */
 package GUI;
+
 import DAO.Connect;
 import DatabaseAccess.quanLyBaoMau;
 import java.beans.Statement;
@@ -20,24 +21,28 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Dell
  */
 public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
-   DefaultTableModel model;
+
+    DefaultTableModel model;
     Connection conn;
     Statement st;
     PreparedStatement pstmt;
     ResultSet rs;
     quanLyBaoMau nhap = new quanLyBaoMau();
-    Connect connect = new Connect();
-    public static String NannyIDD, NannyIDE,NannyID;
+    Connect connect = new Connect();   
+    public static String NannyIDD, NannyIDE, NannyID;
+
     /** Creates new form FrmQuanLyBaoMau1 */
     public FrmQuanLyBaoMau1() {
         initComponents();
-                model = (DefaultTableModel) jTableQLBM.getModel();
+        model = (DefaultTableModel) jTableQLBM.getModel();
         nhap.Load(jTableQLBM);
+
     }
 
     /** This method is called from within the constructor to
@@ -61,6 +66,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Manager Nanny");
 
         cboSelect.setFont(new java.awt.Font("Tahoma", 0, 12));
         cboSelect.setForeground(new java.awt.Color(0, 0, 204));
@@ -197,7 +203,7 @@ public class FrmQuanLyBaoMau1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 private void btnDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailActionPerformed
-           int n = jTableQLBM.getSelectedRow();
+    int n = jTableQLBM.getSelectedRow();
 
     if (n == -1) {
         JOptionPane.showMessageDialog(null, "Chon bao mau can xem!");
@@ -215,7 +221,7 @@ private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 }//GEN-LAST:event_btnAddActionPerformed
 
 private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-         int m = jTableQLBM.getSelectedRow();
+    int m = jTableQLBM.getSelectedRow();
     if (m == -1) {
         JOptionPane.showMessageDialog(this, "Chon du lieu can sua!");
         return;
@@ -226,7 +232,7 @@ private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_btnEditActionPerformed
 
 private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-       //Xóa dữ liệu trong data Vector object
+    //Xóa dữ liệu trong data Vector object
     model.getDataVector().removeAllElements();
     //Cập nhật lại jTable để hiển thị trên màn hình
     jTableQLBM.repaint();
@@ -313,7 +319,13 @@ private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 }//GEN-LAST:event_btnSearchActionPerformed
 
 private void btnAddClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClassActionPerformed
-           FrmSelectClassforNanny frmclassnanny = new FrmSelectClassforNanny();
+    int n = jTableQLBM.getSelectedRow();
+    if (n == -1) {
+        JOptionPane.showMessageDialog(this, "Choose a Nanny to Add");
+        return;
+    }
+    NannyID = jTableQLBM.getValueAt(jTableQLBM.getSelectedRow(), 0).toString();
+    FrmSelectClassforNanny frmclassnanny = new FrmSelectClassforNanny();
     frmclassnanny.setVisible(true);
 }//GEN-LAST:event_btnAddClassActionPerformed
 

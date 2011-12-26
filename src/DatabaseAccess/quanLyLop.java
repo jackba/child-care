@@ -77,18 +77,16 @@ public class quanLyLop {
             conn = connect.getConnection();
 
             st = conn.createStatement();
-            String strsql = "SELECT * from tblActivities";
+            String strsql = "SELECT * from tblAgeGroup";
             rs = st.executeQuery(strsql);
 
             try {
                 Vector v = null;
                 while (rs.next()) {
-                    v = new Vector();
-                    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-
-                        v.addElement(rs.getString(i));
-
-                    }
+                    v = new Vector();                
+                        v.addElement(rs.getString(1));
+                        v.addElement(rs.getString(2));
+                        v.addElement(rs.getFloat(3));
                     model.addRow(v);
                 }
                 //set lai model cho jtable
@@ -102,25 +100,25 @@ public class quanLyLop {
         }
     }
 
-    public void  getClassName(String classname) {
-         classname = null;
-        try {
-
-            conn = connect.getConnection();
-            String strSQL = "select ClassName from tblClass";
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(strSQL);
-
-            while (rs.next()) {
-                classname = rs.getString(2);
-            }
-
-            conn.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        //return classname;
-    }
+//    public void  getClassName(String classname) {
+//         classname = null;
+//        try {
+//
+//            conn = connect.getConnection();
+//            String strSQL = "select ClassName from tblClass";
+//            Statement stmt = conn.createStatement();
+//            ResultSet rs = stmt.executeQuery(strSQL);
+//
+//            while (rs.next()) {
+//                classname = rs.getString(2);
+//            }
+//
+//            conn.close();
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        }
+//        //return classname;
+//    }
     public  void  inittableAgeGroupforGet(JTable jtable)
     {
 
@@ -153,74 +151,6 @@ public class quanLyLop {
         }
 
     }
-    public  void  inittableActive(JTable jtable)
-    {
-        Vector vtHeader = null;
-        String MySql= "SELECT * FROM tblActivities";
-        try {
-            pstmt = conn.prepareStatement(MySql);
-            rs = pstmt.executeQuery();
-            ResultSetMetaData rsmt = rs.getMetaData();
+  
 
-            vtHeader = new Vector();
-            //Add data to vtCol:
-            for (int i = 1; i <= rsmt.getColumnCount(); i++) {
-                vtHeader.add(rsmt.getColumnName(i));
-            }
-            try {
-              Vector  vtData = new Vector();
-                while (rs.next()) {
-                    Vector vtRow = new Vector();
-                    for (int i = 1; i <= rsmt.getColumnCount(); i++) {
-                        vtRow.add(rs.getString(i));
-                    }
-                    vtData.add(vtRow);
-                }
-                jtable.setModel(new DefaultTableModel(vtData,vtHeader));
-            } catch (SQLException ex) {
-              ex.printStackTrace();
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-
-    }
-//        public void  getAgeGroupID(String classname) {
-//         classname = null;
-//        try {
-//
-//            conn = connect.getConnection();
-//            String strSQL = "select AgeGroupID from tblClass";
-//            Statement stmt = conn.createStatement();
-//            ResultSet rs = stmt.executeQuery(strSQL);
-//
-//            while (rs.next()) {
-//                classname = rs.getString(3);
-//            }
-//
-//            conn.close();
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//        }
-//        //return classname;
-//    }
-//                public void  getClassID(String classid) {
-//         classid = null;
-//        try {
-//
-//            conn = connect.getConnection();
-//            String strSQL = "select ClassID from tblClass";
-//            Statement stmt = conn.createStatement();
-//            ResultSet rs = stmt.executeQuery(strSQL);
-//
-//            while (rs.next()) {
-//                classid = rs.getString(1);
-//            }
-//
-//            conn.close();
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//        }
-//       // return ClassID;
-//    }
 }
