@@ -92,4 +92,42 @@ public static Vector vtData;
         }
 
     }
+    public  void  inittableActive(JTable jtable)
+    {
+        Vector vtHeader = null;
+        String MySql= "SELECT * FROM tblActivities";
+        try {
+                 Vector v;
+        Connection conn ;
+        PreparedStatement pstmt;
+        Connect connect = new Connect();
+        ResultSet rs;
+        conn=connect.getConnection();
+            pstmt =conn.prepareStatement(MySql);
+            rs = pstmt.executeQuery();
+            ResultSetMetaData rsmt = rs.getMetaData();
+
+            vtHeader = new Vector();
+            //Add data to vtCol:
+            for (int i = 1; i <= rsmt.getColumnCount(); i++) {
+                vtHeader.add(rsmt.getColumnName(i));
+            }
+            try {
+              Vector  vtData = new Vector();
+                while (rs.next()) {
+                    Vector vtRow = new Vector();
+                    for (int i = 1; i <= rsmt.getColumnCount(); i++) {
+                        vtRow.add(rs.getString(i));
+                    }
+                    vtData.add(vtRow);
+                }
+                jtable.setModel(new DefaultTableModel(vtData,vtHeader));
+            } catch (SQLException ex) {
+              ex.printStackTrace();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+    }
 }

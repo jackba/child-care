@@ -92,6 +92,7 @@ public class FrmEditNanny1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Edit Nanny");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
