@@ -112,8 +112,6 @@ public class FrmMain extends javax.swing.JFrame {
 
         lblPiconline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/online.jpg"))); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\anh do an\\3.jpg")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -252,6 +250,11 @@ public class FrmMain extends javax.swing.JFrame {
         Activity.setForeground(new java.awt.Color(0, 0, 204));
         Activity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Gamepad.png"))); // NOI18N
         Activity.setText("Manager Active");
+        Activity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActivityActionPerformed(evt);
+            }
+        });
         Funcition.add(Activity);
 
         jMenuBar1.add(Funcition);
@@ -343,6 +346,12 @@ private void ChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:e
             FrmQuanLyTre frmquanlytre = new FrmQuanLyTre();
         frmquanlytre.setVisible(true);
 }//GEN-LAST:event_ChildActionPerformed
+
+private void ActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActivityActionPerformed
+// TODO add your handling code here:
+    FrmQuanlyhoatdong frmquanlyhoatdong = new FrmQuanlyhoatdong();
+    frmquanlyhoatdong.setVisible(true);
+}//GEN-LAST:event_ActivityActionPerformed
 
     /**
      * @param args the command line arguments
