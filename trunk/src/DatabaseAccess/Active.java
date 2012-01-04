@@ -23,6 +23,12 @@ public class Active {
     String ActiveID;
     String ActiveName;
     public static Vector vtData;
+    
+    public Active(String ActiveID, String ActiveName) {
+        this.ActiveID=ActiveID;
+        this.ActiveName = ActiveName;
+        
+    }
 
     public String getActiveID() {
         return ActiveID;
