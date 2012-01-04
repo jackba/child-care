@@ -9,14 +9,14 @@ import GUI.FrmQuanlyhoatdong;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 import java.util.Vector;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author darK.x9
@@ -76,52 +76,8 @@ public class quanlyHoatdong {
             
       }
 
-    public void fillDataDetailActive() {
-        try {
 
-            conn = connect.getConnection();
-            String strSql = "select ActiveID,ActiveName"
-                    + " from tblActivities where ActiveID=?";
-            pstmt = conn.prepareStatement(strSql);
-            pstmt.setString(1, FrmQuanlyhoatdong.ActiveIDD);
-
-            rs = pstmt.executeQuery();
-            while (rs.next()) {
-                txtActiveID = rs.getString(1);
-                txtActiveName = rs.getString(2);
-                
-               
-            }
-            conn.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public  void fillDataEditActive()
-    {
-        try {
-            
-            conn = connect.getConnection();
-            String strSql = "select ActiveID,ActiveName"+
-                    " from tblActivities where ActiveID=?";
-            pstmt = conn.prepareStatement(strSql);
-            pstmt.setString(1,FrmQuanlyhoatdong.ActiveIDE);
-            rs = pstmt.executeQuery();
-            while(rs.next()){
-                a = rs.getString(1);
-                b = rs.getString(2);
-               
-               
-               
-            }
-           conn.close();
-            
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-         
-        }
-    }
+   
 
 
 }

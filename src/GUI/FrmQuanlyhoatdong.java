@@ -45,6 +45,8 @@ public class FrmQuanlyhoatdong extends javax.swing.JFrame {
     /** Creates new form FrmQuanlyhoatdong */
     public FrmQuanlyhoatdong() {
         initComponents();
+         model = (DefaultTableModel) jTableQLHD.getModel();
+        nhap.btnLoad(jTableQLHD);
     }
 
     /** This method is called from within the constructor to
@@ -59,7 +61,6 @@ public class FrmQuanlyhoatdong extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableQLHD = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        btnChitiet = new javax.swing.JToggleButton();
         btnAdd = new javax.swing.JToggleButton();
         btnSua = new javax.swing.JToggleButton();
         btnTim = new javax.swing.JToggleButton();
@@ -85,14 +86,6 @@ public class FrmQuanlyhoatdong extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18));
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("Quản lý hoạt động của trẻ");
-
-        btnChitiet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/full_page.png"))); // NOI18N
-        btnChitiet.setText("Detail");
-        btnChitiet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChitietActionPerformed(evt);
-            }
-        });
 
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add.png"))); // NOI18N
         btnAdd.setText("Add");
@@ -136,13 +129,11 @@ public class FrmQuanlyhoatdong extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnChitiet)
-                        .addGap(31, 31, 31)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnAdd)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addGap(87, 87, 87)
                         .addComponent(btnSua)
-                        .addGap(34, 34, 34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                         .addComponent(btnClose))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, 0, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -171,19 +162,14 @@ public class FrmQuanlyhoatdong extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnChitiet)
                     .addComponent(btnClose)
-                    .addComponent(btnSua)
-                    .addComponent(btnAdd))
+                    .addComponent(btnAdd)
+                    .addComponent(btnSua))
                 .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-private void btnChitietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChitietActionPerformed
-// TODO add your handling code here:
-}//GEN-LAST:event_btnChitietActionPerformed
 
 private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 // TODO add your handling code here:
@@ -344,7 +330,6 @@ private void txtTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnAdd;
-    private javax.swing.JToggleButton btnChitiet;
     private javax.swing.JButton btnClose;
     private javax.swing.JToggleButton btnSua;
     private javax.swing.JToggleButton btnTim;
