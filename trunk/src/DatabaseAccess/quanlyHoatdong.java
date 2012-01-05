@@ -30,7 +30,7 @@ public class quanlyHoatdong {
     
     Connect connect = new Connect();
     public String txtActiveID,txtActiveName,
-            a,b,c,d;
+            a,b;
     
     public void btnLoad(JTable jTableQLHD)
     {
@@ -75,6 +75,34 @@ public class quanlyHoatdong {
       
             
       }
+     public void loadEditAdmin() {
+        try {
+
+            conn = connect.getConnection();
+
+            
+
+            String strsql = "SELECT * from tblActivities where ActiveID=?";
+             pstmt = conn.prepareStatement(strsql);
+        pstmt.setString(1, FrmQuanlyhoatdong.ActiveIDE);
+            rs = pstmt.executeQuery();
+
+            try {
+
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    b = rs.getString(2);               
+                }
+                rs.close();
+                st.close();
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
    
