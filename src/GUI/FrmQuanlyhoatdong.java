@@ -97,6 +97,11 @@ public class FrmQuanlyhoatdong extends javax.swing.JFrame {
 
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/comment.png"))); // NOI18N
         btnSua.setText("Edit");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         btnTim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/search.png"))); // NOI18N
         btnTim.setText("Search");
@@ -292,6 +297,19 @@ private void txtTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 // TODO add your handling code here:
     btnTimActionPerformed(evt);
 }//GEN-LAST:event_txtTimActionPerformed
+
+private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+// TODO add your handling code here:
+    int n= jTableQLHD.getSelectedRow();
+        if(n==-1)
+        {
+            JOptionPane.showMessageDialog(this,"Choose a Active to Edit");
+            return;
+        }
+        ActiveIDE = jTableQLHD.getValueAt(n, 0).toString();
+        FrmEditActive frmeditactive = new FrmEditActive();
+        frmeditactive.setVisible(true);
+}//GEN-LAST:event_btnSuaActionPerformed
 
     /**
      * @param args the command line arguments
