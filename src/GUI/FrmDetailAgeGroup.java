@@ -34,10 +34,14 @@ public class FrmDetailAgeGroup extends javax.swing.JFrame {
     PreparedStatement pstmt;
     quanlyTuoi nhap = new quanlyTuoi();
     /** Creates new form FrmDetailAgeGroup */
+
+    
     public FrmDetailAgeGroup() {
         initComponents();
         filldata();
     }
+
+
     private void filldata(){
         String strSql="select AgeGroupID,AgeGroup,Fees from tblAgeGroup where AgeGroupID=?";
        // cn=MyConnection.getConnection();
@@ -58,7 +62,9 @@ conn.close();
                JOptionPane.showMessageDialog(this,"Error:"+ ex.getMessage());
                return;
             }}}
-    
+
+
+
     public  void  inittableAgeGroup(JTable jtable)
     {
         Vector vtHeader = null;
@@ -215,6 +221,8 @@ conn.close();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+
 
 private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
        this.dispose();
