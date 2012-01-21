@@ -70,7 +70,7 @@ public class FrmDetailChild extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel15 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         txtAddress = new javax.swing.JLabel();
@@ -109,12 +109,14 @@ public class FrmDetailChild extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         btnClose = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("detailchild");
 
-        jLabel15.setFont(new java.awt.Font("VNI-Present", 0, 36));
-        jLabel15.setText("information Chils");
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         txtAddress.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtAddress.setForeground(new java.awt.Color(255, 51, 51));
@@ -153,11 +155,11 @@ public class FrmDetailChild extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14));
         jLabel1.setText("ID :");
 
-        txtFirstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtFirstName.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtFirstName.setForeground(new java.awt.Color(255, 51, 51));
         txtFirstName.setText("f");
 
-        txtSex.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtSex.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtSex.setForeground(new java.awt.Color(255, 51, 51));
         txtSex.setText("s");
 
@@ -235,6 +237,8 @@ public class FrmDetailChild extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("DetailChild", jPanel2);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         txtDoctorName.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtDoctorName.setForeground(new java.awt.Color(255, 0, 0));
         txtDoctorName.setText("d");
@@ -294,6 +298,8 @@ public class FrmDetailChild extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("History disease", jPanel1);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         txtParentWorkNumber.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtParentWorkNumber.setForeground(new java.awt.Color(255, 51, 51));
@@ -366,6 +372,8 @@ public class FrmDetailChild extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("DetailParent", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
         txtDateReceived.setDateFormatString("MMMM/dd/yyyy");
         txtDateReceived.setEnabled(false);
 
@@ -409,6 +417,7 @@ public class FrmDetailChild extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Other", jPanel4);
 
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Exit.png"))); // NOI18N
         btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -416,36 +425,60 @@ public class FrmDetailChild extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel8.setText("Detail Child");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(195, 195, 195)
+                            .addComponent(btnClose))
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(159, 159, 159)
+                            .addComponent(jLabel8)))
+                    .addContainerGap(209, Short.MAX_VALUE)))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel8)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
+                    .addComponent(btnClose)
+                    .addContainerGap()))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(214, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(211, 211, 211))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(287, 287, 287)
-                .addComponent(btnClose)
-                .addContainerGap(341, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(btnClose))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-703)/2, (screenSize.height-481)/2, 703, 481);
+        setBounds((screenSize.width-521)/2, (screenSize.height-481)/2, 521, 481);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
@@ -491,7 +524,6 @@ public class FrmDetailChild extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -507,10 +539,12 @@ public class FrmDetailChild extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel txtAddress;
     private com.toedter.calendar.JDateChooser txtBirthday;
